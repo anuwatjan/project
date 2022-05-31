@@ -116,9 +116,9 @@
                       <?php } ?>
                       <?php if($result2 != '' ){ ?>
                       <tr class=" text-center">
-                        <td><?= $result2['po_date'] ?></td>
-                        <td><?= $result2['po_product_start'] ?></td>
-                        <td><?= $result2['po_product_end'] ?></td>
+                        <td><?= datethai($result2['po_date']) ?></td>
+                        <td><?= datethai($result2['po_product_start']) ?></td>
+                        <td><?= datethai($result2['po_product_end']) ?></td>
                         <td><?= $result2['po_qty'] ?></td>
                         <?php
                            $date2 = new DateTime($result2['po_product_end']) ;

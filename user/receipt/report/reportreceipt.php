@@ -28,7 +28,7 @@ ob_start();
                         <h2 align="center"></h2>
                         <a>ใบเสร็จรับเงิน/RECEIPT</a>
                         
-                        <p>ชำระเมื่อ : <?php echo $result1['store_date'] ?></p>
+                        <p>ชำระเมื่อ : <?php echo datethai($result1['store_date']) ?></p>
                         <p><?= barcode($result1['store_number'])?></p>
                         <p style="font: size 28px; ;"><?= ($result1['store_number'])?></p>
                         <hr>

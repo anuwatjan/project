@@ -24,7 +24,7 @@
                   <tbody>
                     <tr>
                       <td class="text-secondary">วันที่ออกเอกสาร</td>
-                      <td class="text-end"><a><?= $result['po_date'] ?></a></td>
+                      <td class="text-end"><a><?= datethai($result['po_date']) ?></a></td>
                     </tr>
                     <tr>
                       <td class="text-secondary">ผู้สั่งซื้อสินค้า</td>
@@ -77,8 +77,8 @@
                     <?php while ($roww = mysqli_fetch_assoc($queryshow)) { ?>
                       <tr>
                         <td><?= $roww['name_product'] ?></td>
-                        <td><?= $roww['po_product_start'] ?></td>
-                        <td><?= $roww['po_product_end'] ?></td>
+                        <td><?= datethai($roww['po_product_start']) ?></td>
+                        <td><?= datethai($roww['po_product_end']) ?></td>
                         <td><?= number_format($roww['dunit_price'], 2) ?></td>
                         <td><?= $roww['po_qty'] ?></td>
                         <td><?= number_format($roww['dunit_price'], 2) ?></td>

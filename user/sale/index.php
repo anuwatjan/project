@@ -30,7 +30,7 @@
               <?php while ($row = mysqli_fetch_array($result)) { ?>
                 <tr>
                   <td><?php echo  $row['store_number'] ?></td>
-                  <td><?php echo  $row['store_date'] ?></td>
+                  <td><?php echo  datethai($row['store_date']) ?></td>
                   <td><a href="?page=<?= $_GET['page'] ?>&function=detailstore&store_id=<?= $row['store_id'] ?>" class="btn btn-sm btn-lg btn-primary">รายละเอียด</a></td>
                 </tr>
               <?php } ?>

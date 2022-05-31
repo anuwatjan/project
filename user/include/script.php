@@ -71,8 +71,33 @@
     }
   </script>
 
-<script>
-  $(document).ready(function() {
-    $('#tableall').DataTable();
-  });
-</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+      $('#tableall').DataTable({
+        language: {
+          "decimal": "",
+          "emptyTable": "ไม่พบข้อมูล",
+          "info": "แสดง _START_ ถึง _END_ จาก _TOTAL_ รายการ",
+          "infoEmpty": "แสดง 0 ถึง 0 จากทั้งหมด 0 รายการ",
+          "infoFiltered": "(filtered from _MAX_ total entries)",
+          "infoPostFix": "",
+          "thousands": ",",
+          "lengthMenu": "แสดง _MENU_ รายการ",
+          "loadingRecords": "กำลังค้นหา...",
+          "processing": "Processing...",
+          "search": "ค้นหา:  ",
+          "zeroRecords": "ไม่พบข้อมูลที่ค้นหา",
+          "paginate": {
+            "first": "First",
+            "last": "Last",
+            "next": "Next",
+            "previous": "Previous"
+          },
+          "aria": {
+            "sortAscending": ": activate to sort column ascending",
+            "sortDescending": ": activate to sort column descending"
+          }
+        }
+      });
+    });
+  </script> -->

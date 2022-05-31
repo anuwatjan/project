@@ -30,7 +30,7 @@ ob_start();
                         <table class="table table-striped table-bordered">
                             <tr>
                                 <th colspan="4" class="text-white bg-info" style="font-size: 30px;background-color:lightblue;">ใบสั่งซื้อสินค้า</th>
-                                <th colspan="2" class="text-white bg-info" style="font-size: 30px;background-color:lightblue;">วันที่ <?= $result1['po_date'] ?> </th>
+                                <th colspan="2" class="text-white bg-info" style="font-size: 30px;background-color:lightblue;">วันที่ <?= datethai($result1['po_date']) ?> </th>
                             </tr>
                             <tr>
                                 <td colspan="6">ลูกค้า : <?= $result_con['contact_name']; ?> </td>

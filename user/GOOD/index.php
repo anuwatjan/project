@@ -32,7 +32,7 @@
             <tbody>
               <?php while ($row = mysqli_fetch_array($result)) { ?>
                 <tr>
-                <td><?php echo  $row['good_date'] ?></td>
+                <td><?php echo  datethai($row['good_date']) ?></td>
                   <td><?php echo  $row['good_reference'] ?></td>
                   <td><a href="?page=<?= $_GET['page'] ?>&function=detailGOOD&good_reference=<?= $row['good_reference'] ?>" class="btn btn-sm btn-lg btn-primary">รายละเอียด</a></td>
                 </tr>

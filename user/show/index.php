@@ -18,7 +18,7 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">ตารางแจ้งเตือนรายการสินค้า</h5>
-          <table class="table ">
+          <table class="table-hover table" id="tableall"> 
             <thead>
               <tr>
                 <th scope="col">ชื่อสินค้า</th>
@@ -30,7 +30,7 @@
               <?php while ($row = mysqli_fetch_array($result)) { ?>
                 <tr>
                   <td><?php echo  $row['product_name'] ?></td>
-                  <td><?php echo  $row['po_date'] ?></td>
+                  <td><?php echo  datethai($row['po_date']) ?></td>
                   <td><a href="?page=<?= $_GET['page'] ?>&function=detailpo&po_id=<?= $row['po_id'] ?>" class="btn btn-sm btn-lg btn-primary">รายละเอียด</a></td>
                 </tr>
               <?php } ?>
@@ -41,3 +41,4 @@
     </div>
   </div>
 </section>
+<?php include('line.php') ?>

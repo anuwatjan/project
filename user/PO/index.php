@@ -32,7 +32,7 @@
             <tbody>
               <?php while ($row = mysqli_fetch_array($result)) { ?>
                 <tr>
-                  <td><?php echo  $row['po_date'] ?></td>
+                  <td><?php echo  datethai($row['po_date']) ?></td>
                   <td><?php echo  $row['po_reference'] ?></td>
                   <td><a href="?page=<?= $_GET['page'] ?>&function=detailPO&po_reference=<?= $row['po_reference'] ?>" class="btn btn-sm btn-lg btn-primary">รายละเอียด</a></td>
                 </tr>

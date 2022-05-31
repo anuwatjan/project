@@ -30,7 +30,7 @@
               <?php while ($row = mysqli_fetch_array($result)) { ?>
                 <tr>
                   <td><?php echo  $row['good_reference'] ?></td>
-                  <td><?php echo  $row['good_date'] ?></td>
+                  <td><?php echo  datethai($row['good_date']) ?></td>
                   <td><a href="?page=<?= $_GET['page'] ?>&function=detailgood&good_id=<?= $row['good_id'] ?>" class="btn btn-sm btn-lg btn-primary">รายละเอียด</a></td>
                 </tr>
               <?php } ?>

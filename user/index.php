@@ -8,7 +8,7 @@
 <body>
 <?php include('./include/header.php');?>
 <?php include('./include/sildebar.php');?>
-
+<?php include('datethai.php');?>
   <main id="main" class="main">
         <?php
 

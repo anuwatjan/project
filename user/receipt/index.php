@@ -31,7 +31,7 @@
               <?php while ($row = mysqli_fetch_array($result)) { ?>
                 <tr>
                   <td><?php echo  $row['store_number'] ?></td>
-                  <td><?php echo  $row['store_date'] ?></td>
+                  <td><?php echo  datethai($row['store_date']) ?></td>
                   <td><?php echo  number_format($row['store_total'],2) ?></td>
                   <td><a href="?page=<?= $_GET['page'] ?>&function=reportreceipt&store_number=<?= $row['store_number'] ?>" class="btn btn-sm btn-lg btn-primary">รายละเอียด</a></td>
                 </tr>

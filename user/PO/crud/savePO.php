@@ -1,4 +1,14 @@
 <?php
+function datetodb($date)
+//    23/04/2564
+{
+    $day = substr($date, 0, 2); // substrตัดข้อความที่เป็นสติง
+    $month = substr($date, 3, 2); //ตัดตำแหน่ง
+    $year = substr($date, 6) - 543;
+    $dateme = $year . '-' . $month . '-' . $day;
+    return $dateme; //return ส่งค่ากลับไป
+}
+
 $n=10;
 function getName($n) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -12,8 +22,9 @@ function getName($n) {
 ?>
 <?php
 if(isset($_POST) && !empty($_POST)){
+$date = date('Y-m-d');
 $po_reference = getName($n);
-$po_date = $_POST['po_date'];
+// $po_date = datetodb($_POST['po_date']);
 $po_contact_order = $_POST['po_contact_order'];
 $po_contact_sale = $_POST['po_contact_sale'];
 // $po_product_start = $_POST["po_product_start"];
@@ -25,8 +36,8 @@ $po_contact_sale = $_POST['po_contact_sale'];
 
 foreach ($_SESSION['carting'] as $product_id => $po_qty) {
     // echo $product_id;
-    $po_product_start = $_POST["po_product_start"]["$product_id"];
-    $po_product_end = $_POST["po_product_end"]["$product_id"];
+    $po_product_start = datetodb($_POST["po_product_start"]["$product_id"]);
+    $po_product_end = datetodb($_POST["po_product_end"]["$product_id"]);
     $total = 0 ;
     $sql3 = "SELECT * FROM product a JOIN doc_unit b ON a.product_id = b.product_id where a.product_id= '$product_id'";
     $query3 = mysqli_query($connection, $sql3);

@@ -2,7 +2,9 @@
     <div class="justify-content-center">
         <div class="row">
             <div class="col-lg-12">
-
+<?php 
+  $date = date('Y-m-d');
+?>
                 <div class="card">
                     <div class="card-body">
                         <form id="frmcart" name="frmcart" method="post" action="?page=savePO">
@@ -12,7 +14,7 @@
                                         <label for="inputEmail" class="col-sm-3 col-form-label">เลขที่อ้างอิง</label>
                                         <div class="row mb-3">
                                             <div class="col-sm-12">
-                                                <input type="text" class="form-control" name="po_reference">
+                                                <input type="text" class="form-control" name="po_reference" readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -20,7 +22,7 @@
                                         <label for="inputEmail" class="col-sm-3 col-form-label">วันที่ออกเอกสาร</label>
                                         <div class="row mb-3">
                                             <div class="col-sm-12">
-                                                <input type="text" id="date1" class="form-control" name="po_date">
+                                                <input type="text" id="date1" class="form-control" name="po_date" placeholder="<?= datethai($date) ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -82,9 +84,9 @@
                                         echo "<tr>";
                                         echo "<td>" . $row["product_name"] . "</td>";
                                         echo "<td >";
-                                        echo "<input type='date' class='form-control' name='po_product_start[$product_id]' /></td>";
+                                        echo "<input type='text' id='date2' class='form-control' name='po_product_start[$product_id]' /></td>";
                                         echo "<td >";
-                                        echo "<input type='date' class='form-control' name='po_product_end[$product_id]'/></td>";
+                                        echo "<input type='text' id='date3' class='form-control' name='po_product_end[$product_id]'/></td>";
                                         echo "<td>" . $po_qty . "</td>";
                                         echo "<td>" . number_format($row['dunit_price'], 2) . "</td>";
                                         echo "<td>" . number_format($sum, 2) . "</td>";
