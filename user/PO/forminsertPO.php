@@ -25,6 +25,7 @@
                                 </div>
                                 <table class="table table-hover text-center" id="">
                                     <tr>
+                                        <td>จำนวน</td>
                                         <td>รายการ</td>
                                         <td>จำนวน</td>
                                         <td>ราคา</td>
@@ -35,6 +36,7 @@
                                     // echo '<pre>'.print_r($_SESSION, 1).'</pre>';
                                     $po_total = 0;
                                     $total = 0;
+                                    $i = 1 ;
                                     if (!empty($_SESSION['carting'])) {
                                         foreach ($_SESSION['carting'] as $product_id => $po_qty) {
                                             $sql = "SELECT * from product a JOIN doc_unit b ON a.product_id = b.product_id where a.product_id = '$product_id'";
@@ -45,6 +47,7 @@
                                             $vat = 0.07 * $total;
                                             $po_total = $total + $vat;
                                             echo "<tr>";
+                                            echo "<td>".$i++."</td>";
                                             echo "<td >" . $row["product_name"] . "</td>";
                                             echo "<td >";
                                             echo "<input type='text' class='form-control' name='amount[$product_id]' value='$po_qty' size='2'/></td>";

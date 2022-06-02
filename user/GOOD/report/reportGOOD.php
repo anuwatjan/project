@@ -46,16 +46,26 @@ ob_start();
                                 <th style="background-color:lightblue;">ราคาสินค้า</th>
                                 <th style="background-color:lightblue;">ราคาสินค้าทั้งหมด</th>
                             </tr>
+                            <?php $i = 1; ?>
                             <?php
-                            $i = 1; ?>
-                            <tr class="text-center">
+                                if (isset($_GET['good_reference']) && !empty($_GET['good_reference'])) {
+                                $good_reference = $_GET['good_reference'];
+                                $sql1 = "SELECT * , a.product_id,b.product_id,b.product_name AS name_product , c.unit_id,d.unit_id,d.unit_name AS name_unit
+                                FROM good a join product b ON a.product_id = b.product_id JOIN doc_unit c ON b.product_id = c.product_id
+                                JOIN unit d ON d.unit_id = c.unit_id  WHERE a.good_reference = '$good_reference'";
+                                $query1 = mysqli_query($connection, $sql1);
+                                }
+                                ?>
+                                <?php while($result1 = mysqli_fetch_assoc($query1)) { ?>
+                                <tr class="text-center">
                                 <td><?= $i++ ?></td>
-                                <td><?= $result['product_name'] ?></td>
-                                <td><?= $result['good_qty'] ?></td>
-                                <td><?= $result['name_unit'] ?></td>
-                                <td><?= number_format($result['dunit_price'], 2) ?></td>
-                                <td><?= number_format($result['good_product_total'], 2) ?></td>
+                                <td><?= $result1['product_name'] ?></td>
+                                <td><?= $result1['good_qty'] ?></td>
+                                <td><?= $result1['name_unit'] ?></td>
+                                <td><?= number_format($result1['dunit_price'], 2) ?></td>
+                                <td><?= number_format($result1['good_product_total'], 2) ?></td>
                             </tr>
+                            <?php }  ?>
                         </table>
                         <?php
                         $html = ob_get_contents();

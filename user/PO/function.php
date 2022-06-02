@@ -9,7 +9,6 @@
 			$_SESSION['carting'][$product_id] = $amount;
 		}
 	}
-	
 	if ($fuction == 'add' && !empty($product_id)) {
 		if (isset($_SESSION['carting'][$product_id])) {
 			$_SESSION['carting'][$product_id]++;
