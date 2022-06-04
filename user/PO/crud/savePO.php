@@ -22,7 +22,7 @@ function getName($n) {
 ?>
 <?php
 if(isset($_POST) && !empty($_POST)){
-$date = date('Y-m-d');
+$date = date('Y-m-d , H:i:s');
 $po_reference = getName($n);
 // $po_date = datetodb($_POST['po_date']);
 $po_contact_order = $_POST['po_contact_order'];
@@ -50,7 +50,7 @@ foreach ($_SESSION['carting'] as $product_id => $po_qty) {
 
 mysqli_query($connection, "BEGIN");
 $sql1 = "INSERT INTO po (product_id,po_reference,po_date,po_contact_order,po_contact_sale,po_product_start,po_product_end,po_qty,po_vat,po_sum,po_total,po_product_total)
-VALUES('$product_id','$po_reference', '$po_date', '$po_contact_order' , '$po_contact_sale','$po_product_start' ,'$po_product_end' , '$po_qty', '$vat', '$sum' , '$po_total','$total')";
+VALUES('$product_id','$po_reference', '$date', '$po_contact_order' , '$po_contact_sale','$po_product_start' ,'$po_product_end' , '$po_qty', '$vat', '$sum' , '$po_total','$total')";
 $query1 = mysqli_query($connection,$sql1);
 // print_r($_SESSION['carting']);
 // echo '<pre>';

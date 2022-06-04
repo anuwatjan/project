@@ -15,7 +15,7 @@
 </div>
 <section class="section">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">ตารางสินค้า</h5>

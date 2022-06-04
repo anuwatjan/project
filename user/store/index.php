@@ -2,11 +2,12 @@
 <?php
 if (isset($_GET['type_id']) & isset($_GET['type_name'])) {
   $type_id = $_GET['type_id'];
-  $sql = "SELECT* FROM product a JOIN doc_unit b ON a.product_id = b.product_id 
-  JOIN unit c ON c.unit_id = b.unit_id JOIN po d ON a.product_id = d.product_id WHERE a.product_type ='$type_id' ";
+  $sql = "SELECT * FROM product a JOIN doc_unit b ON a.product_id = b.product_id 
+  JOIN unit c ON c.unit_id = b.unit_id JOIN po d ON a.product_id = d.product_id WHERE a.product_type ='$type_id'  ";
   $query = mysqli_query($connection, $sql);
 } else {
-  $sql = "SELECT* FROM product a JOIN doc_unit b  ON a.product_id = b.product_id JOIN unit c ON c.unit_id = b.unit_id JOIN po d ON a.product_id = d.product_id";
+  $sql = "SELECT *  FROM product a JOIN doc_unit b  ON a.product_id = b.product_id 
+  JOIN unit c ON c.unit_id = b.unit_id JOIN po d ON a.product_id = d.product_id ";
   $query = mysqli_query($connection, $sql);
 }
 $sql2 = "SELECT* FROM type";
@@ -25,6 +26,7 @@ $query2  = mysqli_query($connection, $sql2);
       </div>
     </nav>
   </div>
+  
   <section class="section">
     <div class="col-md-12">
       <div class="card-body">
@@ -35,7 +37,7 @@ $query2  = mysqli_query($connection, $sql2);
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-8">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">รายการหมวดหมู่สินค้า</h5>
@@ -48,14 +50,17 @@ $query2  = mysqli_query($connection, $sql2);
                   echo '<h4 style="color:red"> หมวดสินค้า ' . $_GET['type_name'] . '</h4>';
                 }
                 //loop
-                while ($row = mysqli_fetch_array($query)) {  ?>
+                while ($row = mysqli_fetch_array($query))  {  ?>
+                <?php 
+                $date = date('Y-m-d H:i:s'); ?>
                   <div class="col-sm-4" style="margin-bottom:50px;">
                     <img src="../user/product/upload/product/<?= $row['product_img']; ?>" width="100" height="100">
                     <hr>
                     <?= $row['product_name']; ?> <br>
-                    จำนวนสินค้า <?= $row['product_net']; ?> <?= $row['unit_name'] ?> <br>
+                    จำนวนสินค้า <?= $row['product_net']; ?> <?= $row['unit_name'] ?><br>
+                    <a class="btn btn-primary text-white"><?= datethai($row['po_product_end']) ?></a>
+                    <hr>
                     <?php
-                    $date = date('Y-m-d');
                     if ($row['product_net'] > 0 && $row['po_product_end'] < $date) { ?>
                       <!-- <a href='?page=<?= $_GET['page'] ?>&function=store&product_id=<?php echo $row['product_id'] ?>&functionn=addd' style="width:100%" class="btn btn-success btn-sm">เพิ่ม</a> -->
                       <a href="#" style="width:100%" class="btn btn-danger btn-sm disabled"> สินค้าเพียงพอ แต่หมดอายุ !!</a>
@@ -74,7 +79,7 @@ $query2  = mysqli_query($connection, $sql2);
           </div>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div class="card">
           <div class="card-body">
             <table class="table table-hover text-center" id="">
@@ -109,7 +114,7 @@ $query2  = mysqli_query($connection, $sql2);
                   $date2 = new DateTime($row['po_product_end']) ;
                   $date1 = new DateTime(date('Y-m-d'));
                   $difference = $date2->diff($date1);
-                  if($_POST['amount'][$row['product_id']] > $row['product_net']) {
+                  if(@$_POST['amount'][@$row['product_id']] > @$row['product_net']) {
                     echo "<div class='text-danger'>จำนวนไม่เพียงพอ</div>";
                   }
                 else{
@@ -168,5 +173,5 @@ $query2  = mysqli_query($connection, $sql2);
               </div>
       </div>
     </div>
-</form>
+</form>  
 </section>

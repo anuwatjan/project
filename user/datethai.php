@@ -11,6 +11,6 @@
 		$strMonthCut = Array("","มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน","กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤศจิกายน","ธันวาคม");
 		$strMonthThai = $strMonthCut[$strMonth];
 		return "$strDay $strMonthThai $strYear";
-		// $strHour:$strMinute
+		// $strHour:$strMinute:$strSeconds
 	}
 ?>

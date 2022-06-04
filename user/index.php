@@ -155,6 +155,10 @@
       } elseif (isset($_GET['page']) && $_GET['page'] == 'sale') {
         if (isset($_GET['function']) && $_GET['function'] == 'updatesale') {
           include('sale/updatesale.php');
+        } elseif (isset($_GET['function']) && $_GET['function'] == 'reportsale') {
+          include('sale/report/index.php');
+        } elseif (isset($_GET['function']) && $_GET['function'] == 'reportsalesearch') {
+          include('sale/report/search.php');
         } else {
           include('sale/index.php');
         }
@@ -188,6 +192,12 @@
         include('PO/crud/savePO.php');
       } elseif (isset($_GET['page']) && $_GET['page'] == 'logout') {
         include('logout/index.php');
+      } elseif (isset($_GET['page']) && $_GET['page'] == 'all') {
+        include('all.php');
+      } elseif (isset($_GET['page']) && $_GET['page'] == 'alldata') {
+        include('alldata.php');
+      } elseif (isset($_GET['page']) && $_GET['page'] == 'profile') {
+        include('profile/index.php');
       }      
         ?>
   </main><!-- End #main -->
