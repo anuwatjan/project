@@ -33,7 +33,7 @@ $result_good = mysqli_fetch_assoc($query_good);
                                     <i class="bi bi-people"></i>
                                 </div>
                                 <div class="ps-3">
-                                    <h6>ลูกค้า</h6>
+                                    <h8>ลูกค้า</h8>
                                     <span class="text-success small pt-1 fw-bold"><?=$result_cus['count_cus']?></span>
                                 </div>
                             </div>
@@ -54,7 +54,7 @@ $result_good = mysqli_fetch_assoc($query_good);
                                     <i class="bi bi-people"></i>
                                 </div>
                                 <div class="ps-3">
-                                    <h6>ผู้ติดต่อ</h6>
+                                    <h8>ผู้ติดต่อ</h8>
                                     <span class="text-success small pt-1 fw-bold"><?=$result_con['count_con']?></span>
 
                                 </div>
@@ -79,7 +79,7 @@ $result_good = mysqli_fetch_assoc($query_good);
                                     <i class="bi bi-currency-dollar"></i>
                                 </div>
                                 <div class="ps-3">
-                                    <h6>ใบสั่งซื้อสินค้า</h6>
+                                    <h8>ใบสั่งซื้อสินค้า</h8>
                                     <span class="text-success small pt-1 fw-bold"><?=$result_po['count_po']?></span>
 
                                 </div>
@@ -97,7 +97,7 @@ $result_good = mysqli_fetch_assoc($query_good);
                                     <i class="bi bi-currency-dollar"></i>
                                 </div>
                                 <div class="ps-3">
-                                    <h6>ใบรับสินค้า</h6>
+                                    <h8>ใบรับสินค้า</h8>
                                     <span class="text-success small pt-1 fw-bold"><?=$result_good['count_good']?></span>
 
                                 </div>
@@ -115,7 +115,7 @@ $result_good = mysqli_fetch_assoc($query_good);
                                     <i class="bi bi-currency-dollar"></i>
                                 </div>
                                 <div class="ps-3">
-                                    <h6>ใบเสร็จรับเงิน</h6>
+                                    <h8>ใบเสร็จรับเงิน</h8>
                                     <span class="text-success small pt-1 fw-bold">8%</span>
 
                                 </div>
@@ -142,7 +142,7 @@ $result_good = mysqli_fetch_assoc($query_good);
                                         <i class="bi bi-cart"></i>
                                     </div>
                                     <div class="ps-3">
-                                        <h6>รายงานการขาย</h6>
+                                        <h8>รายงานการขาย</h8>
                                         <span class="text-success small pt-1 fw-bold">8%</span>
 
                                     </div>
@@ -153,7 +153,7 @@ $result_good = mysqli_fetch_assoc($query_good);
                 <div class="col-xxl-4 col-md-3" onclick="location.href='?page=reportgood'">
                     <div class="card info-card sales-card">
                         <div class="card-body">
-                            <h5 class="card-title">GOODS RECRIPT REPORT <span>
+                            <h5 class="card-title">GOODS RECRIPT<span>
 
 
                                     <div class="d-flex align-items-center">
@@ -161,7 +161,7 @@ $result_good = mysqli_fetch_assoc($query_good);
                                             <i class="bi bi-cart"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>รายงานรับสินค้า</h6>
+                                            <h8>รายงานรับสินค้า</h8>
                                             <span class="text-success small pt-1 fw-bold">8%</span>
 
                                         </div>
@@ -179,7 +179,7 @@ $result_good = mysqli_fetch_assoc($query_good);
                                             <i class="bi bi-cart"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>รายงานสต็อกสินค้า</h6>
+                                            <h8>รายงาน<p>สต็อกสินค้า</p></h8>
                                             <span class="text-success small pt-1 fw-bold">8%</span>
 
                                         </div>
@@ -197,7 +197,7 @@ $result_good = mysqli_fetch_assoc($query_good);
                                             <i class="bi bi-cart"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>รายงานราคาขาย</h6>
+                                            <h8>รายงานราคาขาย</h8>
                                             <span class="text-success small pt-1 fw-bold">8%</span>
 
                                         </div>

@@ -197,10 +197,14 @@
       } elseif (isset($_GET['page']) && $_GET['page'] == 'alldata') {
         include('alldata.php');
       } elseif (isset($_GET['page']) && $_GET['page'] == 'profile') {
+        if (isset($_GET['function']) && $_GET['function'] == 'updateprofile') {
+          include('profile/updateprofile.php');
+        } else {
         include('profile/index.php');
-      }      
+      }   
+    }   
         ?>
-  </main><!-- End #main -->
+  </main>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 <?php include('./include/script.php');?>
