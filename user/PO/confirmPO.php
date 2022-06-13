@@ -31,7 +31,7 @@
                                     <div class="col-auto">
                                         <label class="col-form-label">ผู้สั่งซื้อสินค้า</label>
                                     </div>
-                                    <div class="col-md-5">
+                                    <div class="col-md-4">
                                         <select class="form-control" name="po_contact_order" style="border:white;">
                                             <option value="" selected disabled>เลือกผู้สั่งซื้อสินค้าจากฐานข้อมูล</option>
                                             <?php
@@ -45,7 +45,7 @@
                                     <div class="col-auto">
                                         <label class="col-form-label">ผู้ขายสินค้า</label>
                                     </div>
-                                    <div class="col-md-5">
+                                    <div class="col-md-4">
                                         <select class="form-control" name="po_contact_sale" style="border:white;">
                                             <option value="" selected disabled>เลือกผู้สั่งขายสินค้าจากฐานข้อมูล</option>
                                             <?php

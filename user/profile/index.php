@@ -19,7 +19,7 @@
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-              <img src="../upload/user/<?=$_SESSION['image_login']?>"  class="rounded-circle">
+              <img src="./upload/user/<?=$_SESSION['image_login']?>"  class="rounded-circle">
               <h2><?=$_SESSION['user_login']?></h2>
               <h2><?=$_SESSION['posit_login']?></h2>
             </div>
@@ -47,9 +47,9 @@
       
         <div class="row mb-3">
                                     <label class="col-sm-5 col-form-label">รูปภาพสินค้า</label>
-                                    <div class="col-sm-12 mb-3">
-                                        <div class="col-sm-12 mb-3">
-                                        <img id="preview" width="250" height="250" src="../upload/user/<?= $result['user_img'] ?>">
+                                    <div class="col-sm-12 mb-6">
+                                        <div class="col-sm-12 mb-6">
+                                        <img id="preview" width="300" height="300" src="./upload/user/<?= $result['user_img'] ?>">
                                             <hr>
                                             <input type="file" class="form-control" name="user_img" id="user_img">
                                     <input type="hidden" name="oldimage" value="<?= $result['user_img'] ?>">
@@ -76,7 +76,7 @@
           <div class="row mb-3">
             <label for="Country" class="col-md-4 col-lg-3 col-form-label">วันเดือนปีเกิด</label>
             <div class="col-md-8 col-lg-9">
-              <input  type="text" class="form-control" name="user_date" value="<?=$result['user_date']?>">
+              <input  type="text"  class="form-control" name="user_date" value="<?=datethai($result['user_date'])?>">
             </div>
           </div>
 
@@ -153,3 +153,19 @@
         ReadURL(this);
     });
 </script>
+<!-- date -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://รับเขียนโปรแกรม.net/picker_date/picker_date.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
+<script>
+    picker_date(document.getElementById("date1"), {
+        year_range: "-12:+10"
+    });
+    picker_date(document.getElementById("date3"), {
+        year_range: "-12:+10"
+    });
+    picker_date(document.getElementById("date2"), {
+        year_range: "-12:+10"
+    });
+</script>
+<!-- date -->
