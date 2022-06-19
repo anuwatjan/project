@@ -35,11 +35,13 @@ ob_start();
                         <table class="table table-bordered">
                             <?php
                             $i = 1; ?>
-                            <?php while($result = mysqli_fetch_assoc($query)){?>
+                            <?php while($result = mysqli_fetch_assoc($query)){
+                                
+                                ?>
                             <tr class="text-center">
                                 <td><?= $i++ ?>. </td>
                                 <td><?= $result['product_name'] ?>  (<?= $result['store_qty'] ?>  <?= $result['name_unit']?>)</td>
-                                <td colspan=""><?= number_format($result['store_total'],2)?> บาท</td>
+                                <td colspan=""><?= number_format($result['store_product_total'],2)?> บาท</td>
                             </tr>
                             <?php } ?>
                             <tr>
