@@ -153,7 +153,7 @@ $result_store = mysqli_fetch_assoc($query_store);
                         </div>
                     </div>
                 </div><!-- End Reports -->
-                <div class="col-xxl-4 col-md-3" onclick="location.href='?page=reportgood'">
+                <!-- <div class="col-xxl-4 col-md-3" onclick="location.href='?page=reportgood'">
                     <div class="card info-card sales-card">
                         <div class="card-body">
                             <h5 class="card-title">GOODS RECRIPT<span></h5>
@@ -170,8 +170,8 @@ $result_store = mysqli_fetch_assoc($query_store);
                                         </div>
                                     </div>
                         </div>
-                    </div>
-                </div><!-- End Reports -->
+                    </div> 
+                </div> -->
                 <div class="col-xxl-4 col-md-3" onclick="location.href='?page=stock'">
                     <div class="card info-card sales-card">
                         <div class="card-body">

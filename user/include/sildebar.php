@@ -29,6 +29,13 @@
           <i class="bi bi-person"></i>
           <span>ข้อมูลพื้นฐาน</span>
         </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="?page=goodsale">
+          <i class="ri-account-circle-fill"></i>
+          <span>รายการสินค้าขายดี</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
       <li class="nav-item">
         <a class="nav-link " href="?page=all">
           <i class="ri-account-circle-fill"></i>

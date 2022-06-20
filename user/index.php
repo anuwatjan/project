@@ -184,6 +184,8 @@
         }
       }elseif (isset($_GET['page']) && $_GET['page'] == 'confirmPO') {
         include('PO/confirmPO.php');
+      }elseif (isset($_GET['page']) && $_GET['page'] == 'goodsale') {
+        include('goodsale/index.php');
       }elseif (isset($_GET['page']) && $_GET['page'] == 'savestore') {
         include('store/savestore.php');
       }elseif (isset($_GET['page']) && $_GET['page'] == 'confirmstore') {

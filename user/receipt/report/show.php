@@ -2,8 +2,7 @@
 include 'connect.php'; // MySQL Connection
 if (isset($_GET['store_number']) && !empty($_GET['store_number'])) {
   $store_number = $_GET['store_number'];
-  $sql = "SELECT *,d.unit_id,e.unit_id,e.unit_name AS name_unit  FROM store a JOIN product b ON a.product_id = b.product_id JOIN po c ON c.product_id = b.product_id 
-  JOIN doc_unit d ON d.product_id  = b.product_id JOIN unit e ON e.unit_id = d.unit_id WHERE a.store_number = '$store_number'";
+  $sql = "SELECT * ,c.product_id,d.unit_id,d.unit_name AS name_unit FROM store a join product b ON a.product_id = b.product_id LEFT JOIN doc_unit c ON b.product_id = c.product_id JOIN unit d ON c.unit_id = d.unit_id   WHERE store_number = '$store_number'";
   $query = mysqli_query($connection, $sql);
   // $result = mysqli_fetch_assoc($query);
   // $countnum = mysqli_num_rows($query);
