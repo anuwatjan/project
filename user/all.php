@@ -15,6 +15,9 @@ $sql_good = "SELECT COUNT(good_id) as count_good FROM good";
 $query_good = mysqli_query($connection,$sql_good);
 $result_good = mysqli_fetch_assoc($query_good);
 
+$query_store = "SELECT DISTINCT(COUNT(store_number)) as count_number FROM store a ORDER BY store_id DESC";
+$query_store = mysqli_query($connection, $query_store);
+$result_store = mysqli_fetch_assoc($query_store);
 
 ?>
 <section class="section dashboard">
@@ -116,7 +119,7 @@ $result_good = mysqli_fetch_assoc($query_good);
                                 </div>
                                 <div class="ps-3">
                                     <h8>ใบเสร็จรับเงิน</h8>
-                                    <span class="text-success small pt-1 fw-bold">8%</span>
+                                    <span class="text-success small pt-1 fw-bold"><?=$result_store['count_number']?></span>
 
                                 </div>
                             </div>
@@ -134,7 +137,7 @@ $result_good = mysqli_fetch_assoc($query_good);
                 <div class="col-xxl-4 col-md-3" onclick="location.href='?page=sale'">
                     <div class="card info-card sales-card">
                         <div class="card-body">
-                            <h5 class="card-title">SALES REPORT
+                            <h5 class="card-title">SALES REPORT</h5>
 
 
                                 <div class="d-flex align-items-center">
@@ -153,7 +156,7 @@ $result_good = mysqli_fetch_assoc($query_good);
                 <div class="col-xxl-4 col-md-3" onclick="location.href='?page=reportgood'">
                     <div class="card info-card sales-card">
                         <div class="card-body">
-                            <h5 class="card-title">GOODS RECRIPT<span>
+                            <h5 class="card-title">GOODS RECRIPT<span></h5>
 
 
                                     <div class="d-flex align-items-center">
@@ -172,14 +175,14 @@ $result_good = mysqli_fetch_assoc($query_good);
                 <div class="col-xxl-4 col-md-3" onclick="location.href='?page=stock'">
                     <div class="card info-card sales-card">
                         <div class="card-body">
-                            <h5 class="card-title">INVENTORY REPORT <span>
+                            <h5 class="card-title">INVENTORY REPORT <span></h5>
 
                                     <div class="d-flex align-items-center">
                                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                             <i class="bi bi-cart"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h8>รายงาน<p>สต็อกสินค้า</p></h8>
+                                            <h8>รายงานสต็อกสินค้า</h8>
                                             <span class="text-success small pt-1 fw-bold">8%</span>
 
                                         </div>
@@ -190,7 +193,7 @@ $result_good = mysqli_fetch_assoc($query_good);
                 <div class="col-xxl-4 col-md-3">
                     <div class="card info-card sales-card">
                         <div class="card-body">
-                            <h5 class="card-title">SALE PRICE REPORT <span>
+                            <h5 class="card-title">SALE PRICE REPORT <span></h5>
 
                                     <div class="d-flex align-items-center">
                                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">

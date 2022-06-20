@@ -22,7 +22,7 @@ if (isset($_GET['po_reference']) && !empty($_GET['po_reference'])) {
         while ($result = mysqli_fetch_assoc($query)) {
             $date = date('Y-m-d');
             $sqlinsert = "INSERT INTO good(good_product_total,good_reference,good_date,good_import,good_contact_order,good_contact_sale,product_id,good_product_start,good_product_end,good_qty,good_vat,good_sum,good_total)
-            values('$result[good_product_total]','$result[po_reference]','$result[po_date]','$date','$result[po_contact_order]','$result[po_contact_sale]','$result[product_id]','$result[po_product_start]','$result[po_product_end]','$result[po_qty]','$result[po_vat]','$result[po_sum]','$result[po_total]')";
+            values('$result[po_product_total]','$result[po_reference]','$result[po_date]','$date','$result[po_contact_order]','$result[po_contact_sale]','$result[product_id]','$result[po_product_start]','$result[po_product_end]','$result[po_qty]','$result[po_vat]','$result[po_sum]','$result[po_total]')";
             $query2 = mysqli_query($connection, $sqlinsert);
             // เพิ่มจำนวนสินค้า
             // for ($i = 0; $i < $countnum; $i++) {
