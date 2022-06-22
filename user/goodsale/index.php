@@ -1,9 +1,4 @@
-<?php
-$month = 'July';
-$sql = "SELECT * FROM store where date_format(storedate, '%M')='$month'";
-$query = mysqli_query($connection , $sql);
-$result = mysqli_fetch_assoc($query);
-?>
+<?php include 'crud/sql.php' ?>
 <div class="pagetitle">
   <h1>สินค้าขายดี 5 อันดับแรก</h1>
   <nav>
@@ -19,54 +14,33 @@ $result = mysqli_fetch_assoc($query);
       </div>
     </div>
   </nav>
-</div>  
-<div class="col-xxl-4 col-md-3">
-                    <div class="card info-card sales-card bg-primary">
-                        <div class="card-body text-white">
-                            <h2 class="card-title text-white" style="font-size: 30px;">ยอดขายสินค้าวันนี้<span></h2>
+</div>
+<div class="col-xxl-4 col-md-5">
+  <div class="card info-card sales-card bg-primary">
+    <div class="card-body text-white">
+      <h2 class="card-title text-white" style="font-size: 30px;">ยอดขายสินค้าวันนี้<span></h2>
 
-                                    <div class="d-flex" style="font-size: 20px;">
-                                        <?php 
-                                       $date = date('Y-m-d , H:i:s');
-                                            ?>
-                                        <div class="ps-3">
-                                    <p><?= datethai($date) ?></p>
-                                            
-                                            <!-- <span class="text-success small pt-1 fw-bold"><?php $day ?></span> -->
+      <div class="d-flex" style="font-size: 20px;">
+        <div class="ps-3">
+          <p><?= datethai($datenow) ?></p>
+          <?php 
+          while($row = mysqli_fetch_assoc($query)){ ?>
+          <p><?= $row['product_id']?></p>
+          <?php } ?>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card info-card sales-card bg-success">
+    <div class="card-body text-white">
+      <h2 class="card-title text-white" style="font-size: 30px;">ยอดขายสินค้าสัปดาห์นี้</h2>
+<p>สัปดาห์ที่ <?= $week1 ?> </p>
+      <div class="d-flex" style="font-size: 20px;">
+        <div class="ps-3">
+          <p><?= datethai($start) ." - ". datethai($end) ?></p>
 
-                                        </div>
-                                    </div>
-                        </div>
-                    </div>
-                <div class="card info-card sales-card bg-primary">
-                        <div class="card-body text-white">
-                            <h2 class="card-title text-white" style="font-size: 30px;">ยอดขายสินค้าสัปดาห์นี้<span></h2>
-
-                                    <div class="d-flex" style="font-size: 20px;">
-                                        <div class="ps-3">
-                                    <p><?= datethai($date) ?></p>
-                                            
-                                            <!-- <span class="text-success small pt-1 fw-bold"><?php $day ?></span> -->
-
-                                        </div>
-                                    </div>
-                        </div>
-                    </div>
-                </div><!-- End Reports -->
-        
-
-                <div class="card info-card sales-card bg-primary">
-                        <div class="card-body text-white">
-                            <h2 class="card-title text-white" style="font-size: 30px;">ยอดขายสินค้าเดือนนี้<span></h2>
-
-                                    <div class="d-flex" style="font-size: 20px;">
-                                
-                                        <div class="ps-3">
-                                    <p><?= datethai($result) ; ?></p>
-
-                                        </div>
-                                    </div>
-                        </div>
-                    </div>
-                </div><!-- End Reports -->
-        
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- End Reports -->
