@@ -49,4 +49,8 @@
 
   <!-- autorefresh -->
   <script type="text/javascript" src="https://livejs.com/live.js"></script>
+
+  <!-- chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>

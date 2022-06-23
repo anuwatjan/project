@@ -16,7 +16,8 @@ $end = $date->format("Y-m-d");
 $sql = "SELECT * , COUNT(a.product_id) AS count_product , SUM(a.store_total) AS count_price  FROM store a JOIN po b ON a.product_id = b.product_id WHERE a.store_date = '$datenow' group by a.store_date ";
 $query = mysqli_query($connection , $sql);
 
-$sql1 = "SELECT * , COUNT(a.product_id) AS count_product , SUM(a.store_total) AS count_price  FROM store a JOIN po b ON a.product_id = b.product_id WHERE (a.store_date BETWEEN '$start' AND  '$end') group by a.store_date ";
+$sql1 = "SELECT * , COUNT(a.product_id) AS count_product , SUM(a.store_total) AS count_price  FROM store a JOIN po b ON a.product_id = b.product_id
+ WHERE (a.store_date BETWEEN '$start' AND  '$end') group by a.store_date ";
 $query1 = mysqli_query($connection , $sql1);
 
 // print_r($query1);

@@ -55,16 +55,19 @@
         </div>
       </div>
 
-      <div class="col">
+      <!-- <div class="col">
       <?php
           while ($row1 = mysqli_fetch_assoc($query1)) { ?>
           <p><?=$row1['count_product'] ?></p>
           <p><?= number_format($row1['count_price'], 2) ?> บาท</p>
           <?php } ?>
-      </div>
+      </div> -->
 
 
     </div>
   </div>
 </div>
 </div><!-- End Reports -->
+
+<h2 class="card-title text-center" style="font-size: 30px;">ยอดขายสินค้ารายเดือนของปี <?php  echo DateYear($year) ?> </h2>
+<?php include 'chart.php' ?>
