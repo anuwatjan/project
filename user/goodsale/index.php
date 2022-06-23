@@ -55,13 +55,9 @@
         </div>
       </div>
 
-      <!-- <div class="col">
-      <?php
-          while ($row1 = mysqli_fetch_assoc($query1)) { ?>
-          <p><?=$row1['count_product'] ?></p>
-          <p><?= number_format($row1['count_price'], 2) ?> บาท</p>
-          <?php } ?>
-      </div> -->
+      <div class="col">
+  <p><?= $result['store_id'] ?></p>
+      </div>
 
 
     </div>

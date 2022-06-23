@@ -1,10 +1,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <?php
-    $sql = "SELECT * , MONTHNAME(store_date) as monthname , SUM(store_total) as amount FROM store GROUP BY monthname";
-    $query = mysqli_query($connection , $sql);
-    // $result  = mysqli_fetch_assoc($query);
-
-    while ($data = mysqli_fetch_assoc($query)) {
+    $sql22 = "SELECT * , MONTHNAME(store_date) as monthname , SUM(store_total) as amount FROM store GROUP BY monthname";
+    $query22 = mysqli_query($connection , $sql22);
+    while ($data = mysqli_fetch_assoc($query22)) {
         $month[] =  ($data['monthname']);
         $amount[] = $data['amount'];
     }
@@ -12,7 +10,7 @@
     ?>
 
 
-    <div style="width: 100%;">
+    <div style="width: 8    0%;">
         <canvas id="myChart"></canvas>
     </div>
 
