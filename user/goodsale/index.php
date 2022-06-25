@@ -15,7 +15,10 @@
     </div>
   </nav>
 </div>
-<div class="col-xxl-4 col-md-5">
+
+<div class="row">
+
+<div class="col-xxl-4 col-md-6">
   <div class="card info-card sales-card bg-primary">
     <div class="card-body text-white">
       <h2 class="card-title text-white" style="font-size: 30px;">ยอดขายสินค้าวันนี้<span></h2>
@@ -40,12 +43,42 @@
   </div>
 </div>
 
-<div class="col-xxl-4 col-md-5">
+<div class="col-xxl-4 col-md-6">
+  <div class="card info-card sales-card bg-danger">
+    <div class="card-body text-white">
+      <h2 class="card-title text-white" style="font-size: 30px;">รายการสินค้าขายดี 5 อันดับแรก<span></h2>
+      <div class="row">
+        <div class="col">
+          <div class="d-flex" style="font-size: 20px;">
+            <div class="ps-3">
+              <p><?= datethai($datenow) ?></p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <?php
+          while ($row = mysqli_fetch_assoc($query)) { ?>
+            <p><?= $row['count_product'] ?> รายการ</p>
+            <p><?= number_format($row['count_price'], 2) ?> บาท</p>
+          <?php } ?>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-xxl-4 col-md-12">
   <div class="card info-card sales-card bg-success">
     <div class="card-body text-white">
-      <h2 class="card-title text-white" style="font-size: 30px;">ยอดขายสินค้าสัปดาห์นี้</h2>
-      <p>สัปดาห์ที่ <?= $week1 ?> </p>
       <div class="row">
+        <div class="col-md-4">
+          <h5 class="card-title text-white" style="font-size: 30px;">ยอดขายสินค้าสัปดาห์นี้</h5>
+      <p>สัปดาห์ที่ <?= $week1 ?> </p>
+        </div>
+      
         <div class="col">
           <div class="d-flex" style="font-size: 20px;">
             <div class="ps-3">
@@ -54,7 +87,6 @@
           </div>
         </div>
       </div>
-
       <div class="col">
       <?php
       while ($row1 = mysqli_fetch_assoc($query1)) { ?>
@@ -62,12 +94,67 @@
             <p><?= number_format($row1['count_price'], 2) ?> บาท</p>
       <?php }?>
       </div>
-
-
     </div>
   </div>
 </div>
-</div><!-- End Reports -->
+</div>
+
+
 
 <h2 class="card-title text-center" style="font-size: 30px;">ยอดขายสินค้ารายเดือนของปี <?php  echo DateYear($year) ?> </h2>
 <?php include 'chart.php' ?>
+
+
+
+<div class="row">
+
+<div class="col-xxl-4 col-md-6">
+  <div class="card info-card sales-card bg-primary">
+    <div class="card-body text-white">
+      <h2 class="card-title text-white" style="font-size: 30px;">สินค้าหมดสต็อก<span></h2>
+      <div class="row">
+        <div class="col">
+          <div class="d-flex" style="font-size: 20px;">
+            <div class="ps-3">
+              <p><?= datethai($datenow) ?></p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <?php
+          while ($row = mysqli_fetch_assoc($query)) { ?>
+            <p><?= $row['count_product'] ?> รายการ</p>
+            <p><?= number_format($row['count_price'], 2) ?> บาท</p>
+          <?php } ?>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-xxl-4 col-md-6">
+  <div class="card info-card sales-card bg-danger">
+    <div class="card-body text-white">
+      <h2 class="card-title text-white" style="font-size: 30px;">สินค้าใกล้หมดอายุ<span></h2>
+      <div class="row">
+        <div class="col">
+          <div class="d-flex" style="font-size: 20px;">
+            <div class="ps-3">
+              <p><?= datethai($datenow) ?></p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <?php
+          while ($row = mysqli_fetch_assoc($query)) { ?>
+            <p><?= $row['count_product'] ?> รายการ</p>
+            <p><?= number_format($row['count_price'], 2) ?> บาท</p>
+          <?php } ?>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
