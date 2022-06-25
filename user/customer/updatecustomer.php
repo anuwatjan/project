@@ -60,7 +60,7 @@
                                 <label for="inputEmail" class="col-sm-3 col-form-label">จังหวัด</label>
                                 <div class="row mb-3">
                                     <div class="col-sm-10">
-                                    <select class="form-control" name="customer_province" style="height: unset !important;">
+                                    <select class="form-control" name="customer_province" id="province" style="height: unset !important;">
                                     <option value="" selected disabled>จังหวัด</option>
                                    <?php while($row = mysqli_fetch_assoc($queryprovince)){?>
                                     <option value="<?=$row['id']?>" <?=$result['customer_province'] == $row['id'] ? 'selected' : '' ?>>
@@ -72,7 +72,7 @@
                                 <label for="inputEmail" class="col-sm-3 col-form-label">อำเภอ</label>
                                 <div class="row mb-3">
                                     <div class="col-sm-10">
-                                    <select class="form-control" name="customer_amphures" style="height: unset !important;">
+                                    <select class="form-control" name="customer_amphures" id="amphure" style="height: unset !important;">
                                     <option value="" selected disabled>อำเภอ</option>
                                    <?php while($row = mysqli_fetch_assoc($queryamphures)){?>
                                     <option value="<?=$row['id']?>" <?=$result['customer_amphures'] == $row['id'] ? 'selected' : '' ?>>
@@ -84,7 +84,7 @@
                                 <label for="inputEmail" class="col-sm-3 col-form-label">ตำบล</label>
                                 <div class="row mb-3">
                                     <div class="col-sm-10">
-                                    <select class="form-control" name="customer_geo" style="height: unset !important;">
+                                    <select class="form-control" id="district" name="customer_geo" style="height: unset !important;">
                                     <option value="" selected disabled>ตำบล</option>
                                    <?php while($row = mysqli_fetch_assoc($querygeo)){?>
                                     <option value="<?=$row['id']?>" <?=$result['customer_geo'] == $row['id'] ? 'selected' : '' ?>>
@@ -126,3 +126,5 @@
         ReadURL(this);
     });
 </script>
+<script src="../user/customer/assets/jquery.min.js"></script>
+<script src="../user/customer/assets/script.js"></script>

@@ -24,6 +24,9 @@ if (isset($_POST) && !empty($_POST)) {
      $customer_email = $_POST["customer_email"];
      $customer_add = $_POST["customer_add"];
      $customer_type = $_POST["customer_type"];
+     $customer_province = $_POST["customer_province"];
+     $customer_amphures = $_POST["customer_amphures"];
+     $customer_geo = $_POST["customer_geo"];
      $oldimage = $_POST["oldimage"];
      if (isset($_FILES['customer_img']['name']) && !empty($_FILES['customer_img']['name'])) {
           $extension = array("jpeg", "jpg", "png");
@@ -52,7 +55,7 @@ if (isset($_POST) && !empty($_POST)) {
      } else {
           $filename = $oldimage;
      }
-     $sql = "UPDATE customer SET customer_type='$customer_type' , customer_name='$customer_name',customer_phone='$customer_phone' , customer_img= '$filename' , 
+     $sql = "UPDATE customer SET customer_geo='$customer_geo' , customer_amphures='$customer_amphures' , customer_province='$customer_province' , customer_type='$customer_type' , customer_name='$customer_name',customer_phone='$customer_phone' , customer_img= '$filename' , 
     customer_email = '$customer_email' , customer_add = '$customer_add'   WHERE customer_id = '$customer_id'";
      if (mysqli_query($connection, $sql)) {
           $alert = '<script type="text/javascript">';

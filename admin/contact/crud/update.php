@@ -20,6 +20,9 @@ if (isset($_POST) && !empty($_POST)) {
     $contact_phone = $_POST["contact_phone"];
     $contact_email = $_POST["contact_email"];
     $contact_add = $_POST["contact_add"];
+    $contact_province = $_POST["contact_province"];
+    $contact_amphures = $_POST["contact_amphures"];
+    $contact_geo = $_POST["contact_geo"];
     $oldimage = $_POST["oldimage"];
     if (isset($_FILES['contact_img']['name']) && !empty($_FILES['contact_img']['name'])) {
         $extension = array("jpeg", "jpg", "png");
@@ -48,7 +51,7 @@ if (isset($_POST) && !empty($_POST)) {
    } else {
         $filename = $oldimage;
    }
-    $sql = "UPDATE contact SET contact_name='$contact_name',contact_phone='$contact_phone' , contact_img= '$filename' , 
+    $sql = "UPDATE contact SET contact_geo='$contact_geo' , contact_amphures='$contact_amphures' , contact_province='$contact_province' ,contact_name='$contact_name',contact_phone='$contact_phone' , contact_img= '$filename' , 
     contact_email = '$contact_email' , contact_add = '$contact_add'   WHERE contact_id = '$contact_id'";
     if (mysqli_query($connection, $sql)) {
         $alert = '<script type="text/javascript">';
