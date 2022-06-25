@@ -34,14 +34,14 @@
                                     <a>ต้นทุนต่อหน่วย</a>
                                     <div class="input-group mb-3">
                                         <input type="text" class="form-control" value="<?= $result['dunit_price'] ?>" name="dunit_price">
-                                    </div>
+                                    </div>  
                                 </div>
-                                <div class="col-md-6">
+                                <!-- <div class="col-md-6">
                                     <a>จุดสั่งซื้อ</a>
                                     <div class="input-group mb-3">
                                         <input type="text" class="form-control" value="<?= $result['product_reorder'] ?>" name="product_reorder">
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="row mb-3">
                                 <div class="col-sm-10">

@@ -4,6 +4,8 @@ if (isset($_GET['type_id']) && !empty($_GET['type_id'])) {
     $sql = "SELECT * FROM type  WHERE type_id = '$type_id'";
     $query = mysqli_query($connection, $sql);
     $result = mysqli_fetch_assoc($query);
+    // print_r($result);
+    // exit;
 }
 if (isset($_POST) && !empty($_POST)) {
     $type_name = $_POST["type_name"];
@@ -20,3 +22,4 @@ if (isset($_POST) && !empty($_POST)) {
     }
     mysqli_close($connection);
 }
+?>

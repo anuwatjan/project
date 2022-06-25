@@ -13,6 +13,7 @@ a.product_symptom,d.symptom_id,d.symptom_name AS name_symptom
   $query = mysqli_query($connection, $sql);
   $result = mysqli_fetch_assoc($query);
 
+
   $sql1 = "SELECT * FROM doc_unit e 
   JOIN unit ee ON e.unit_id = ee.unit_id 
   WHERE product_id = '$product_id'";

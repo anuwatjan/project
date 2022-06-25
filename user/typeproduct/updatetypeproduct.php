@@ -10,7 +10,7 @@
                                 <label for="inputEmail" class="col-sm-3 col-form-label">ชื่อประเภทสินค้า</label>
                                 <div class="row mb-3">
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" value="<?= $result['unit_name']?>" name="unit_name">
+                                        <input type="text" class="form-control" value="<?= $result['type_name']?>" name="type_name">
                                     </div>
                                 </div>
                              

@@ -48,8 +48,10 @@
                                 <div class="row mb-3">
 
                                     <div class="col-sm-10">
-                                        <textarea class="form-control" style="height: 100px" value="<?= $result['product_detail'] ?>" name="product_detail"></textarea>
-                                    </div>
+                                        <a>
+                                            <textarea placeholder="<?= $result['product_detail'] ?>" class="form-control" style="height: 100px" value="<?= $result['product_detail'] ?>" name="product_detail"></textarea>
+                                        </a>
+                                        </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-sm-10">

@@ -9,6 +9,7 @@ if (isset($_POST) && !empty($_POST)) {
     $product_name = $_POST["product_name"];
     $product_detail = $_POST["product_detail"];
     $product_generic = $_POST["product_generic"];
+    $product_detail = $_POST["product_detail"];
     $oldimage = $_POST["oldimage"];
     if (isset($_FILES['product_img']['name']) && !empty($_FILES['product_img']['name'])) {
         $extension = array("jpeg", "jpg", "png");

@@ -9,6 +9,7 @@
           <li class="breadcrumb-item active">สินค้า</li>
         </ol>
         <button type="button" class="btn btn-primary rounded-pill"><a class="text-white" href="?page=<?= $_GET['page'] ?>&function=insertproduct">เพิ่มสินค้า(ADD PRODUCT)</a></button>
+        <button type="button" class="btn btn-danger rounded-pill"><a href="javascript:history.back(1)" class="text-white">ย้อนกลับ</a> </button>
       </div>
     </div>
   </nav>
@@ -28,7 +29,9 @@
               </tr>
             </thead>
             <tbody>
-              <?php while ($row = mysqli_fetch_array($result)) { ?>
+              <?php 
+              $i =1 ;
+              while ($row = mysqli_fetch_array($result)) { ?>
                 <tr>
                   <td><img src="../user/product/upload/product/<?= $row['product_img']; ?>" width="100" height="100"></td>
                   <td><?php echo  $row['product_name'] ?></td>

@@ -24,7 +24,7 @@ if (isset($_POST) && !empty($_POST)) {
         if ($_SESSION['posit_login']  == 'ผู้ดูแลระบบ') {
             $alert = '<script type="text/javascript">';
             $alert .= 'alert("WELCOME ผู้ดูแลระบบ");';
-            $alert .= 'window.location.href = "./admin/";';
+            $alert .= 'window.location.href = "../admin/";';
             $alert .= '</script>';
             echo $alert;
             exit();
