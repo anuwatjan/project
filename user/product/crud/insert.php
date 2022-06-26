@@ -1,5 +1,19 @@
 <?php
+ function getName($n){
+     $n = 10;
+     $characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"; //ตัวอักษรที่สามารถสุ่มได้
+     $randomstring = "";
+     for($i = 0; $i < $n; $i++) {
+         $index = rand(0 , strlen($characters) - 1);
+         $randomstring.= $characters[$index];  
+     }
+     return $randomstring;
+ 
+ }
+?>
+<?php
 if (isset($_POST) && !empty($_POST)) {
+    $product_id = getName($n);
     $product_name = $_POST['product_name'];
     $product_generic = $_POST['product_generic'];
     $product_detail = $_POST['product_detail'];
@@ -36,8 +50,8 @@ if (isset($_POST) && !empty($_POST)) {
    } else {
         $filename = '';
    }
-    $sql = "INSERT INTO product(product_net,product_img,product_symptom,product_category,product_type,product_name,product_generic,product_detail) 
-    VALUES ('0','$filename','$product_symptom','$product_category','$product_type','$product_name','$product_generic','$product_detail')";
+    $sql = "INSERT INTO product(product_id,product_net,product_img,product_symptom,product_category,product_type,product_name,product_generic,product_detail) 
+    VALUES ('$product_id','0','$filename','$product_symptom','$product_category','$product_type','$product_name','$product_generic','$product_detail')";
      $query = mysqli_query($connection, $sql);
 
      // $sqlse = "SELECT * FROM product  LAST_INSERT_ID()";

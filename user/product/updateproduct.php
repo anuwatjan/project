@@ -23,13 +23,13 @@
                                 <label for="inputText" class="col-sm-3 col-form-label">ประเภทสินค้า</label>
                                 <div class="row mb-3">
                                     <div class="col-sm-10">
-                                        <select class="form-control" name="product_type">
-                                            <option value="" selected disabled>ประเภทสินค้า</option>
-                                            <?php
-                                            foreach ($querytype as $data12) : ?>
-                                                <option value="<?= $data12['type_id'] ?>"><?= $data12['type_name'] ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
+                                    <select class="form-control" name="product_type" style="height: unset !important;">
+                                    <option value="" selected disabled>ประเภทสินค้า</option>
+                                   <?php while($row = mysqli_fetch_assoc($querytype)){?>
+                                    <option value="<?=$row['type_id']?>" <?=$result['product_type'] == $row['type_id'] ? 'selected' : '' ?>>
+                                        <?=$row['type_name']?></option>
+                             <?php } ?> 
+                              </select>
                                     </div>
                                 </div>
                                 <label for="inputEmail" class="col-sm-3 col-form-label">ชื่อสินค้า</label>

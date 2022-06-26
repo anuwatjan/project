@@ -58,8 +58,8 @@ $query2  = mysqli_query($connection, $sql2);
                     <hr>
                     <?= $row['product_name']; ?> <br>
                     จำนวนสินค้า <?= $row['product_net']; ?> <?= $row['unit_name'] ?><br>
-                    <a class="btn btn-primary text-white"><?= datethai($row['po_product_end']) ?></a>
-                    <hr>
+                    <!-- <a class="btn btn-primary text-white"><?= datethai($row['po_product_end']) ?></a> -->
+                    
                     <?php
                     if ($row['product_net'] > 0 && $row['po_product_end'] < $date) { ?>
                       <!-- <a href='?page=<?= $_GET['page'] ?>&function=store&product_id=<?php echo $row['product_id'] ?>&functionn=addd' style="width:100%" class="btn btn-success btn-sm">เพิ่ม</a> -->
@@ -71,7 +71,7 @@ $query2  = mysqli_query($connection, $sql2);
                       <?php } else { ?>
                       <a href="#" style="width:100%" class="btn btn-danger btn-sm disabled"> สินค้าหมด !!</a>
                     <?php } ?>
-                    <hr>
+                    
                   </div>
                 <?php } ?>
               </div>

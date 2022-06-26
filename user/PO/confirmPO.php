@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <select class="form-control" name="po_contact_sale" style="border:white;">
-                                            <option value="" selected disabled>เลือกผู้สั่งขายสินค้าจากฐานข้อมูล</option>
+                                            <option value="" selected disabled>เลือกผู้ขายสินค้าจากฐานข้อมูล</option>
                                             <?php
                                             foreach ($queryc as $data12) : ?>
                                                 <option value="<?= $data12['contact_id'] ?>"><?= $data12['contact_name'] ?></option>
@@ -84,9 +84,9 @@
                                         echo "<tr>";
                                         echo "<td>" . $row["product_name"] . "</td>";
                                         echo "<td >";
-                                        echo "<input type='text' id='date2' class='form-control' name='po_product_start[$product_id]' /></td>";
+                                        echo "<input type='date' id='date2' class='form-control' name='po_product_start[$product_id]' /></td>";
                                         echo "<td >";
-                                        echo "<input type='text' id='date3' class='form-control' name='po_product_end[$product_id]'/></td>";
+                                        echo "<input type='date' id='date3' class='form-control' name='po_product_end[$product_id]'/></td>";
                                         echo "<td>" . $po_qty . "</td>";
                                         echo "<td>" . number_format($row['dunit_price'], 2) . "</td>";
                                         echo "<td>" . number_format($sum, 2) . "</td>";
@@ -128,10 +128,10 @@
     picker_date(document.getElementById("date1"), {
         year_range: "-12:+10"
     });
-    picker_date(document.getElementById("date3"), {
+    picker_date(document.getElementById(".date3"), {
         year_range: "-12:+10"
     });
-    picker_date(document.getElementById("date2"), {
+    picker_date(document.getElementById(".date2"), {
         year_range: "-12:+10"
     });
 </script>
