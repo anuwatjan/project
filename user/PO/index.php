@@ -11,6 +11,7 @@
       </div>
       <div class="col-md-6">
         <button type="button" class="btn btn-primary rounded-pill"><a class="text-white" href="?page=<?= $_GET['page'] ?>&function=insertPO">เพิ่มใบสั่งซื้อสินค้า(ADD PO)</a></button>
+        <button type="button" class="btn btn-danger rounded-pill"><a href="javascript:history.back(1)" class="text-white">ย้อนกลับ</a> </button>
       </div>
     </div>
   </nav>

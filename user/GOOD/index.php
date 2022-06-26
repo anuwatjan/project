@@ -11,13 +11,14 @@
       </div>
       <div class="col-md-6">
         <!-- <button type="button" class="btn btn-primary rounded-pill"><a class="text-white" href="?page=<?= $_GET['page'] ?>&function=insertGOOD">เพิ่มใบรับสินค้า(ADD GOOD)</a></button> -->
+        <button type="button" class="btn btn-danger rounded-pill"><a href="javascript:history.back(1)" class="text-white">ย้อนกลับ</a> </button>
       </div>
     </div>
   </nav>
 </div>  
 <section class="section">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">ตารางใบรับสินค้า</h5>

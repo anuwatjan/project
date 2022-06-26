@@ -122,7 +122,8 @@
                         <td><?= $result2['po_qty'] ?></td>
                         <?php
                            $date2 = new DateTime($result2['po_product_end']) ;
-                           $date1 = new DateTime(date('Y-m-d'));
+                          //  $date1 = new DateTime(date('Y-m-d'));
+                           $date1 = new DateTime($result2['po_product_start']) ;
                            $difference = $date2->diff($date1);
                         ?>
                         <td class="bg-danger text-white"><?php echo $difference->days ?> วัน</td>

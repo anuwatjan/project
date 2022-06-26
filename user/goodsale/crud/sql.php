@@ -11,25 +11,19 @@ $date->setISODate($year,$week1,7);
 $end = $date->format("Y-m-d");
 
 
-$sql = "SELECT * , COUNT(a.product_id) AS count_product , SUM(a.store_total) AS count_price  FROM store a JOIN po b ON a.product_id = b.product_id 
+$sql = "SELECT * , COUNT(a.product_id) AS count_product , SUM(a.store_total) AS count_price   , MAX(a.store_qty) AS maxstore
+FROM store a JOIN po b ON a.product_id = b.product_id 
 WHERE a.store_date = '$datenow' group by a.store_date ";
 $query = mysqli_query($connection , $sql);
-// $result = mysqli_fetch_assoc($query);
 
 $sql1 = "SELECT * , COUNT(a.product_id) AS count_product , SUM(a.store_total) AS count_price  FROM store a JOIN po b ON a.product_id = b.product_id
  WHERE (a.store_date BETWEEN '$start' AND  '$end') ";
 $query1 = mysqli_query($connection , $sql1);
-// $result1 = mysqli_fetch_assoc($query1);
-// echo '<pre>';
-// echo print_r($result1);
-// echo '</pre>';
-// exit;    
-// print_r($result);
+
+$sql2 = "SELECT * , b.product_id,c.product_id,c.product_name AS nameproduct
+FROM store a JOIN po b ON a.product_id = b.product_id JOIN product c ON c.product_id = b.product_id ORDER BY store_qty DESC LIMIT 0,5 ";
+$query2 = mysqli_query($connection , $sql2);
+// print_r($query2);
 // exit;
-// print_r($query);
-// exit;
-// $result = mysqli_fetch_assoc($query);
-// while($row = mysqli_num_rows(    $query) > 1){
-//     if()
-// }
+
 ?>

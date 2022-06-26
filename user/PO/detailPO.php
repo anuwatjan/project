@@ -42,15 +42,15 @@
                   <tbody>
                     <tr>
                       <td class="text-secondary">ราคาเฉพาะสินค้า</td>
-                      <td class="text-end"><a><?= $result['po_product_total'] ?></a></td>
+                      <td class="text-end"><a><?= number_format($result['sumtotal'],2) ?></a></td>
                     </tr>
                     <tr>
                       <td class="text-secondary">VAT</td>
-                      <td class="text-end"><a><?= $result['po_vat'] ?></a></td>
+                      <td class="text-end"><a><?= number_format($result['vat'],2) ?></a></td>
                     </tr>
                     <tr>
                       <td class="text-secondary">สรุปยอด</td>
-                      <td class="text-end"><a><?= $result['po_total'] ?></a></td>
+                      <td class="text-end"><a><?= number_format($result['sumtotal']  + $result['vat'],2) ?></a></td>
                     </tr>
                   </tbody>
                 </table>

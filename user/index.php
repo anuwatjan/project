@@ -160,7 +160,7 @@
         } elseif (isset($_GET['function']) && $_GET['function'] == 'reportsalesearch') {
           include('sale/report/search.php');
         } else {
-          include('sale/index.php');
+          include('sale/index1.php');
         }
       } elseif (isset($_GET['page']) && $_GET['page'] == 'receipt') {
         if (isset($_GET['function']) && $_GET['function'] == 'updatereceipt') {

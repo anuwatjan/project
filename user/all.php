@@ -7,11 +7,11 @@ $sql_con = "SELECT COUNT(contact_id) as count_con FROM contact";
 $query_con = mysqli_query($connection,$sql_con);
 $result_con = mysqli_fetch_assoc($query_con);
 
-$sql_po = "SELECT COUNT(po_id) as count_po FROM po";
+$sql_po = "SELECT COUNT(DISTINCT(po_reference)) as count_po FROM po";
 $query_po = mysqli_query($connection,$sql_po);
 $result_po = mysqli_fetch_assoc($query_po);
 
-$sql_good = "SELECT COUNT(good_id) as count_good FROM good";
+$sql_good = "SELECT COUNT(DISTINCT(good_reference)) as count_good FROM good";
 $query_good = mysqli_query($connection,$sql_good);
 $result_good = mysqli_fetch_assoc($query_good);
 

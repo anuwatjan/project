@@ -9,6 +9,10 @@
           <li class="breadcrumb-item active">ใบเสร็จรับเงิน</li>
         </ol>
       </div>
+      <div class="col-md-6">
+        <!-- <button type="button" class="btn btn-primary rounded-pill"><a class="text-white" href="?page=<?= $_GET['page'] ?>&function=insertGOOD">เพิ่มใบรับสินค้า(ADD GOOD)</a></button> -->
+        <button type="button" class="btn btn-danger rounded-pill"><a href="javascript:history.back(1)" class="text-white">ย้อนกลับ</a> </button>
+      </div>
     </div>
   </nav>
 </div>

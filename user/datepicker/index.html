@@ -1,0 +1,26 @@
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/datepicker3.css" rel="stylesheet"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/bootstrap-datepicker.th.js"></script>
+</head>
+
+<div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1' style="padding:25px 0 0 0;">
+                    <strong>เลือกวันที่:</strong> <input class="datepicker"/>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $.fn.datepicker.defaults.language = 'th';
+                $('.datepicker').datepicker();
+            });
+        </script>
+    </div>
+</div>
