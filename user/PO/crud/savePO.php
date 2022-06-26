@@ -104,5 +104,5 @@ mysqli_close($connection);
 ?>
 <script type="text/javascript">
     alert("<?php echo $message; ?>");
-    window.location = '?page=PO&function=insertPO';
+    window.location = '?page=PO&function=PO';
 </script>

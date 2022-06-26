@@ -74,7 +74,7 @@
                                 </table>
                                 <hr>
                                 <div class="row">
-                                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                                    <div class="col">
                                         <div class="card card-hover">
                                             <div class="box bg-danger text-center">
                                                 <h1 class="font-light text-white">
@@ -85,7 +85,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                                    <div class="col">
                                         <div class="card card-hover">
                                             <div class="box bg-warning text-center">
                                                 <h1 class="font-light text-white">
@@ -97,7 +97,7 @@
                                     </div>
 
 
-                                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                                    <div class="col">
                                         <div class="card card-hover">
                                             <div class="box bg-info text-center">
                                                 <h1 class="font-light text-white">
