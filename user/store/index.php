@@ -37,7 +37,7 @@ $query2  = mysqli_query($connection, $sql2);
       </div>
     </div>
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">รายการหมวดหมู่สินค้า</h5>
@@ -79,7 +79,7 @@ $query2  = mysqli_query($connection, $sql2);
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-12">
         <div class="card">
           <div class="card-body">
             <table class="table table-hover text-center" id="">
