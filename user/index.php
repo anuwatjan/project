@@ -145,6 +145,8 @@
           include('GOOD/cart.php');
         } elseif (isset($_GET['function']) && $_GET['function'] == 'reportGOOD') {
           include('GOOD/report/reportGOOD.php');
+        } elseif (isset($_GET['function']) && $_GET['function'] == 'insertStock') {
+          include('GOOD/crud/insertStock.php');
         } elseif (isset($_GET['function']) && $_GET['function'] == 'modal') {
           include('GOOD/modal.php');
         } elseif (isset($_GET['function']) && $_GET['function'] == 'detailGOOD') {

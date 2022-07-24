@@ -1,4 +1,5 @@
 <?php include('crud/insert.php') ?>
+
 <div class="pagetitle">
     <h1>หน้าเพิ่มข้อมูลสินค้า</h1>
     <nav>
@@ -28,6 +29,7 @@
                                         </div>
                                     </div>
                                 </div>
+                             
                                 <label for="inputText" class="col-sm-3 col-form-label">ประเภทสินค้า</label>
                                 <div class="row mb-3">
                                     <div class="col-sm-10">

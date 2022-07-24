@@ -1,28 +1,16 @@
 <?php
-$n=10;
-function getName($n) {
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $randomString = '';
-    for ($i = 0; $i < $n; $i++) {
-        $index = rand(0,  strlen($characters) - 1);
-        $randomString .= $characters[$index];
-    } 
-    return $randomString;
-}
-
 // ตรวจสอบค่าที่จำเป็นว่ามีการส่งมามั้ย ถ้าไม่ส่งมา จะไม่ทำงานทั้งหมด
-if (isset($_GET['po_reference']) && !empty($_GET['po_reference'])) {
-    $po_reference = $_GET['po_reference'];
-    $lot = getName($n) ; 
+if (isset($_GET['good_reference']) && !empty($_GET['good_reference'])) {
+    $good_reference = $_GET['good_reference'];
     // ค้นฐานข้อมูลจากค่าที่ส่งเข้ามา ได้ 3 รายการ
-    $sql = "SELECT * FROM po a JOIN product b ON a.product_id = b.product_id WHERE a.po_reference = '$po_reference'";
+    $sql = "SELECT * FROM good a JOIN product b ON a.product_id = b.product_id WHERE a.good_reference = '$good_reference'";
     $query = mysqli_query($connection, $sql);
     // เช็คข้อมูลที่ query ออกมาว่ามีกี่รายการ แล้วเก็บค่าไว้ในตัวแปร $count
     $countnum = mysqli_num_rows($query);
     // ถ้า ตัวแปร $query(po_reference) ที่รับค่ามา ซึ่งเก็บใน ตัวแปร $count มีค่าในฐานข้อมูลแล้ว ให้แสดงว่าเก็บไปแล้ว   
     print_r($query);
     // exit;
-    if ($countnum > 1 ) {
+    if ($countnum > 0 ) {
         echo "<script>";
         echo "alert(' เพิ่มไม่ได้เพราะมีในฐานข้อมูลแล้ว !');";
         echo "window.location='?page=PO';";
@@ -33,8 +21,8 @@ if (isset($_GET['po_reference']) && !empty($_GET['po_reference'])) {
     } else {
         while ($result = mysqli_fetch_assoc($query)) {
             $date = date('Y-m-d');
-            $sqlinsert = "INSERT INTO good(lot , good_product_total,good_reference,good_date,good_import,good_contact_order,good_contact_sale,product_id,good_product_start,good_product_end,good_qty,good_vat,good_sum,good_total)
-            values('$lot' , '$result[po_product_total]','$result[po_reference]','$result[po_date]','$date','$result[po_contact_order]','$result[po_contact_sale]','$result[product_id]','$result[po_product_start]','$result[po_product_end]','$result[po_qty]','$result[po_vat]','$result[po_sum]','$result[po_total]')";
+            $sqlinsert = "INSERT INTO good(good_product_total,good_reference,good_date,good_import,good_contact_order,good_contact_sale,product_id,good_product_start,good_product_end,good_qty,good_vat,good_sum,good_total)
+            values('$result[po_product_total]','$result[po_reference]','$result[po_date]','$date','$result[po_contact_order]','$result[po_contact_sale]','$result[product_id]','$result[po_product_start]','$result[po_product_end]','$result[po_qty]','$result[po_vat]','$result[po_sum]','$result[po_total]')";
             $query2 = mysqli_query($connection, $sqlinsert);
             // เพิ่มจำนวนสินค้า
             // for ($i = 0; $i < $countnum; $i++) {

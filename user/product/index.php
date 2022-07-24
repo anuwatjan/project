@@ -24,6 +24,7 @@
             <thead>
               <tr>
                 <th scope="col">รูปภาพ</th>
+                <th scope="col">บาร์โค้ด</th>
                 <th scope="col">ชื่อสินค้า</th>
                 <th scope="col">รายละเอียด</th>
               </tr>
@@ -34,6 +35,7 @@
               while ($row = mysqli_fetch_array($result)) { ?>
                 <tr>
                   <td><img src="../user/product/upload/product/<?= $row['product_img']; ?>" width="100" height="100"></td>
+                  <td><?php echo  barcode($row['product_barcode'])  ?></td>
                   <td><?php echo  $row['product_name'] ?></td>
                   <td><a href="?page=<?= $_GET['page'] ?>&function=detailproduct&product_id=<?= $row['product_id'] ?>" class="btn btn-sm btn-lg btn-primary">รายละเอียด</a></td>
                 </tr>

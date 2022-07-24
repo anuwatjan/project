@@ -1,3 +1,16 @@
+<?php include 'barcode/barcode.php' ?>
+<?php
+$n=13;
+function getName($n) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $randomString = '';
+    for ($i = 0; $i < $n; $i++) {
+        $index = rand(0, strlen($characters) - 1);
+        $randomString .= $characters[$index];
+    } 
+    return $randomString;
+}
+?>
 <?php
 if (isset($_POST) && !empty($_POST)) {
     $product_name = $_POST['product_name'];
@@ -6,6 +19,7 @@ if (isset($_POST) && !empty($_POST)) {
     $product_type = $_POST['product_type'];
     $product_category = $_POST['product_category'];
     $product_symptom = $_POST['product_symptom'];
+    $product_barcode = getName($n);
 //     $product_vat = $_POST['product_vat'];
     $product_net = $_POST['product_net'];
 //     $product_reorder = $_POST['product_reorder'];
@@ -36,8 +50,8 @@ if (isset($_POST) && !empty($_POST)) {
    } else {
         $filename = '';
    }
-    $sql = "INSERT INTO product(product_net,product_img,product_symptom,product_category,product_type,product_name,product_generic,product_detail) 
-    VALUES ('0','$filename','$product_symptom','$product_category','$product_type','$product_name','$product_generic','$product_detail')";
+    $sql = "INSERT INTO product(product_barcode , product_net,product_img,product_symptom,product_category,product_type,product_name,product_generic,product_detail) 
+    VALUES ('$product_barcode' , '0','$filename','$product_symptom','$product_category','$product_type','$product_name','$product_generic','$product_detail')";
      $query = mysqli_query($connection, $sql);
 
      // $sqlse = "SELECT * FROM product  LAST_INSERT_ID()";
