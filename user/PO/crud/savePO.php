@@ -32,12 +32,13 @@ $po_contact_sale = $_POST['po_contact_sale'];
 @$po_qty =  $_POST["po_qty"];
 @$po_total =  $_POST["po_total"];
 
+
 //บันทึกการสั่งซื้อลงใน po
 
 foreach ($_SESSION['carting'] as $product_id => $po_qty) {
     // echo $product_id;
-    $po_product_start = datetodb($_POST["po_product_start"]["$product_id"]);
-    $po_product_end = datetodb($_POST["po_product_end"]["$product_id"]);
+    $po_product_start = ($_POST["po_product_start"]["$product_id"]);
+    $po_product_end = ($_POST["po_product_end"]["$product_id"]);
     $total = 0 ;
     $sql3 = "SELECT * FROM product a JOIN doc_unit b ON a.product_id = b.product_id where a.product_id= '$product_id'";
     $query3 = mysqli_query($connection, $sql3);

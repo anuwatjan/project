@@ -1,4 +1,19 @@
 <?php include('crud/show.php') ?>
+<?php
+include "src/BarcodeGenerator.php";
+include "src/BarcodeGeneratorHTML.php";
+
+$code = "000001";//รหัส Barcode ที่ต้องการสร้าง
+function Barcode($code){
+$generator = new Picqer\Barcode\BarcodeGeneratorHTML();
+$border = 2;//กำหนดความหน้าของเส้น Barcode
+$height = 50;//กำหนดความสูงของ Barcode
+
+return $generator->getBarcode($code , $generator::TYPE_CODE_128,$border,$height);
+}
+
+?>
+
 <div class="pagetitle">
   <h1>สินค้า</h1>
   <nav>
@@ -23,6 +38,7 @@
           <table class="table table-hover" id="tableall">
             <thead>
               <tr>
+                <th scope="col">รหัสบาร์โค้ด</th>
                 <th scope="col">รูปภาพ</th>
                 <th scope="col">บาร์โค้ด</th>
                 <th scope="col">ชื่อสินค้า</th>
@@ -34,6 +50,7 @@
               $i =1 ;
               while ($row = mysqli_fetch_array($result)) { ?>
                 <tr>
+                  <td><?php echo Barcode($row['product_id'])?><?php echo $row['product_id']?></td>
                   <td><img src="../user/product/upload/product/<?= $row['product_img']; ?>" width="100" height="100"></td>
                   <td><?php echo  barcode($row['product_barcode'])  ?></td>
                   <td><?php echo  $row['product_name'] ?></td>

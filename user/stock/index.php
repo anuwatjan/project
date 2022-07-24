@@ -14,14 +14,14 @@
 </div>
 <section class="section">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">ตารางรายงานการสต็อกสินค้า</h5>
           <table class="table-hover" id="tableall">
             <thead>
               <tr>
-                <th scope="col">ชื่อรายงานการสต็อกสินค้า</th>
+                <th scope="col">หมายเลขสต็อกสินค้า</th>
                 <th scope="col">วันที่นำเข้าสินค้า</th>
                 <th scope="col">รายละเอียด</th>
               </tr>

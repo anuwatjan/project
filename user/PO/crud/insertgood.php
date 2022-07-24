@@ -22,7 +22,11 @@ if (isset($_GET['po_reference']) && !empty($_GET['po_reference'])) {
     // ถ้า ตัวแปร $query(po_reference) ที่รับค่ามา ซึ่งเก็บใน ตัวแปร $count มีค่าในฐานข้อมูลแล้ว ให้แสดงว่าเก็บไปแล้ว   
     print_r($query);
     // exit;
+<<<<<<< HEAD
     if ($countnum > 1 ) {
+=======
+    if ($query < 0 ) {
+>>>>>>> d633a22281de1649190dfcf328f2ae282ad6aa6c
         echo "<script>";
         echo "alert(' เพิ่มไม่ได้เพราะมีในฐานข้อมูลแล้ว !');";
         echo "window.location='?page=PO';";

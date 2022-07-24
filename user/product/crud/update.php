@@ -4,12 +4,16 @@ if (isset($_GET['product_id']) && !empty($_GET['product_id'])) {
     $sql = "SELECT * FROM product  WHERE product_id = '$product_id'";
     $query = mysqli_query($connection, $sql);
     $result = mysqli_fetch_assoc($query);
+
+    $sqltype = "SELECT * FROM type";
+    $querytype = mysqli_query($connection , $sqltype);
 }
 if (isset($_POST) && !empty($_POST)) {
     $product_name = $_POST["product_name"];
     $product_detail = $_POST["product_detail"];
     $product_generic = $_POST["product_generic"];
     $product_detail = $_POST["product_detail"];
+    $product_type = $_POST["product_type"];
     $oldimage = $_POST["oldimage"];
     if (isset($_FILES['product_img']['name']) && !empty($_FILES['product_img']['name'])) {
         $extension = array("jpeg", "jpg", "png");
@@ -39,7 +43,7 @@ if (isset($_POST) && !empty($_POST)) {
         $filename = $oldimage;
    }
     $sql = "UPDATE product SET product_name='$product_name',product_detail='$product_detail' , product_img= '$filename' , 
-    product_generic = '$product_generic'   WHERE product_id = '$product_id'";
+    product_generic = '$product_generic'  , product_type = '$product_type'  WHERE product_id = '$product_id'";
     if (mysqli_query($connection, $sql)) {
         $alert = '<script type="text/javascript">';
         $alert .= 'alert("แก้ไขข้อมูลสำเร็จ !!");';
