@@ -5,13 +5,23 @@
     // session_destroy();
    		require_once '../includedb/condb.php';  
 
-
-
-
     $product_id = $_POST['product_id'];
-    if( $product_id > 0){
-        $_SESSION['store'][$product_id] = array(1);
 
+// เช็คว่าเคยมีในตะกร้ายัง 
+
+    
+
+    if( $product_id > 0){
+
+        if ($_SESSION['store'][$product_id] > 1 ){
+
+              $_SESSION['store'][$product_id][0]++;
+
+        }else{
+
+        $_SESSION['store'][$product_id] = array(1);
+        
+        }
         
 
     }else{

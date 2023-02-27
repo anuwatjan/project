@@ -51,7 +51,7 @@ $(document).ready(function () {
             var product_id = val["prod_id"];
             Cart_Insert(product_id);
           } else {
-            
+            // มี โชว์ modal
           }
         });
       },
@@ -69,16 +69,25 @@ $(document).ready(function () {
         var htmls_num = 0;
         var toto = 0;
         $.each(data, function (key, val) {
-
           htmls += '<div class="d-flex align-items-center mb-5">';
 
-          htmls +='<img class="img-fluid flex-shrink-0 rounded-circle" src="../backend/getimg/prod/' + val["product_img"] +'" alt="' + val["product_name"] + '" style="width: 65px; height: 65px;">';
-          
+          htmls +=
+            '<img class="img-fluid flex-shrink-0 rounded-circle" src="../backend/getimg/prod/' +
+            val["product_img"] +
+            '" alt="' +
+            val["product_name"] +
+            '" style="width: 65px; height: 65px;">';
+
           htmls += '<div class="ps-4">';
 
           htmls += '<h6 class="mb-1"> ' + val["product_name"] + " </h6>";
-          htmls += "<span>" + val["product_quantity"] + " x " + (val["product_price"] * 1).toFixed(2) + "</span> ";
-          
+          htmls +=
+            "<span>" +
+            val["product_quantity"] +
+            " x " +
+            (val["product_price"] * 1).toFixed(2) +
+            "</span> ";
+
           htmls += "<br>";
 
           htmls +=
@@ -93,13 +102,14 @@ $(document).ready(function () {
           htmls +=
             '<button type="button"   id="ok_add_product_dele"   class="btn btn-danger" product_id = "' +
             val["product_id"] +
-            '" >ลบ</button> ';
+            '" ><i class="bi bi-archive-fill"></i></button> ';
 
           htmls += "</div>";
 
           htmls += "</div>";
 
-          toto = toto + val["product_quantity"] * 1 * (val["product_price"] * 1);
+          toto =
+            toto + val["product_quantity"] * 1 * (val["product_price"] * 1);
         });
         $("#show_add_product").html(htmls);
         $(".toto_add_product").html((toto * 1).toFixed(2));
@@ -109,19 +119,31 @@ $(document).ready(function () {
 
   // กดปุ่มลบออก
   $("#show_add_product").on("click", "#ok_add_product_dele", function () {
-    var product_id = $(this).attr("product_id");
-    console.log(product_id);
-    $.ajax({
-      url: "serve/dele_product.php",
-      type: "POST",
-      data: { product_id: product_id },
-      dataType: "json",
-      success: function (data) {
-        // console.log(data);
-        $.each(data, function (key, val) {
-          add_product(0);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        var product_id = $(this).attr("product_id");
+        console.log(product_id);
+        $.ajax({
+          url: "serve/dele_product.php",
+          type: "POST",
+          data: { product_id: product_id },
+          dataType: "json",
+          success: function (data) {
+            // console.log(data);
+            $.each(data, function (key, val) {
+              add_product(0);
+            });
+          },
         });
-      },
+      }
     });
   });
 

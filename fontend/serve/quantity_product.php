@@ -7,7 +7,9 @@
 
 
     $product_id = $_POST['product_id'];
+
     $name = $_POST['name'];
+    
     if( $name == 'b'){
 
         $_SESSION['store'][$product_id][0]++;
@@ -15,7 +17,18 @@
     }else{
    
       if($_SESSION['store'][$product_id]['0'] > 1){
+
+        // เช็คว่า ถ้า เหลือ 1 ให้เอาออกเลย 
+
+        if($_SESSION['store'][$product_id]['0'] == 1){
+
+             unset($_SESSION['store'][$product_id]); 
+          
+        }else{
+
         $_SESSION['store'][$product_id][0]--;
+
+        }
 
       }
 

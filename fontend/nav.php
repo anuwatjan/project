@@ -27,7 +27,19 @@
                             </ul>
                         </li> -->
                     </ul>
+                    
                     <form class="d-flex">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link  text-white dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi bi-person-circle"></i>  ชื่อ</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#!">All Order</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="#!">Profile</a></li>
+                                <li><a class="dropdown-item" href="#!">Checkout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                         <button class="btn btn-outline-dark text-white" type="submit">
                             <i class="bi-cart-fill me-1"></i>
                             Cart
