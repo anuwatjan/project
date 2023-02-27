@@ -1,0 +1,55 @@
+    @font-face {
+        font-family: myFirstFont;
+        src: url('../font/yikes_medium-webfont.ttf'), url('../font/yikes_medium-webfont.eot')
+    }
+
+    body {
+        font-family: myFirstFont;
+        font-weight: bold;
+    }
+
+    ::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 0px;
+    }
+
+
+    .fixed {
+        position: sticky;
+        top: 40%;
+        z-index: 3;
+    }
+
+
+
+    .box {
+        top: 100px;
+        background-color: white;
+        width: 100%;
+        border: 1px solid white;
+    }
+
+    ul.horizontal-list {
+        list-style: none;
+
+    }
+
+    ul.horizontal-list li {
+        min-width: 12rem;
+        text-align: center;
+    }
+
+    .affecttext:link {
+        color: red;
+    }
+
+    /* mouse over link */
+    .affecttext:hover {
+        font-size: 20px;
+        text-decoration: 20% underline #663399;
+    }
+
+
+    ul.horizontal-list li:not(:last-child) {
+        border-right: 0px solid black;
+    }

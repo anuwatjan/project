@@ -64,16 +64,7 @@ $connect = mysqli_connect("localhost","root","akom2006","project_new");
                                         <th></th>
                                     </thead>
 
-                                    <!-- <tbody>
-                                        <tr>
-                                        <td> <div id="product_name"></div></td>
-                                        <td> <div id="product_suppiles"></div></td>
-                                        <td> <div id="product_quantity"></div></td>
-                                        <td> <div id="product_point"></div></td>
-                                        <td> <div id="select_product"></div></td>
-                                      </tr>
-                                    </tbody> -->
-
+                 
                                        <tbody id="select_product">
                                         
                                        </tbody>
@@ -180,9 +171,10 @@ $connect = mysqli_connect("localhost","root","akom2006","project_new");
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-    $('select[name$="suppiles"]').change(function() {
+    $('select[name="suppiles"]').change(function() {
         var html = "";
-        var suppiles_id = $('select[name$="suppiles"]').find(':selected').data('suppiles_id');
+        // var suppiles_id = $('select[name="suppiles"]').find(':selected').data('suppiles_id');
+        var suppiles_id = $('select[name="suppiles"]').find(':selected').data('suppiles_id');
         $.ajax({
             url: "Phase_insert_show_suppiles.php",
             type: "post",
@@ -191,17 +183,8 @@ $(document).ready(function() {
             success: function(data) {
                 var htmlok = "" ;
                 $.each(data, function(key, val) {
-                    // html += ''+val['product_name']+'</td> <br>' ;
 
-                    // html1 += ''+val['product_suppiles']+'</td> <br>' ;
-
-                    // html2 += ''+val['product_quantity']+'</td> <br>' ;
-
-                    // html3 += ''+val['product_point']+'</td> <br>' ;
-
-                    // html4 += '<a class="btn btn-sm btn-primary" href="?page=<?= $_GET['page'] ?>&function=insert&product_id='+val['prod_id']+'&act=add">เลือก</a><br>' ;
-
-                            htmlok='<div id="Product_Click" data-id=' + val["product_id"]  + '>' + 
+                            htmlok +='<div id="Product_Click" data-id=' + val["product_id"]  + '>' + 
                             '<tr>'+
                             ' <td>'+val['product_name']+'</td>'+
                                       '<td class="text-center">'+val['product_suppiles']+'</td>'+

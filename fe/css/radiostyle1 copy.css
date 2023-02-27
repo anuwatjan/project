@@ -1,0 +1,201 @@
+/*
+ * BoxedCheck from flyArtist v1.0.7
+ * https://github.com/flyartist/boxed-check
+ */
+ .boxed-check-group1,
+ .boxed-check-group1 .boxed-check1 {
+     position: relative;
+     margin-bottom: 10px;
+ }
+ .boxed-check-group1 .boxed-check1 {
+     display: block;
+ }
+ .boxed-check-group1 .boxed-check1:last-child {
+     margin-bottom: 0;
+ }
+ .boxed-check-group1 .boxed-check1.boxed-check-inline1 {
+     display: inline-block;
+     margin-bottom: 0;
+ }
+ .boxed-check-group1 .boxed-check1 .boxed-check-input1 {
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     display: none;
+ }
+ .boxed-check-group1 .boxed-check1 .boxed-check-input1:disabled + .boxed-check-label1 {
+     border: 1px dashed #bec2c6;
+     opacity: .4;
+     cursor: not-allowed;
+ }
+ .boxed-check-group1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1,
+ .boxed-check-group1 .boxed-check1 .boxed-check-input1:not(:disabled) + .boxed-check-label1:hover{
+     border-color: #7fad39;;
+ }
+ .boxed-check-group1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1::before {
+     content: ' ';
+     position: absolute;
+     width: 10px;
+     height: 6px;
+     border-width: 0 0 2px 2px;
+     border-style: solid;
+     -webkit-transform: rotate(-45deg);
+     transform: rotate(-45deg);
+     right: 4px;
+     top: 6px;
+ }
+ .boxed-check-group1 .boxed-check1 .boxed-check-label1 {
+     display: block;
+     background-color: #ffffff;
+     border: 1px solid #ced4da;
+     padding: .1rem 1.3rem;
+     margin: 0;
+     border-radius: .25rem;
+     cursor: pointer;
+ }
+ .boxed-check-group1.boxed-check-sm1 .boxed-check1 .boxed-check-label1 {
+     padding: .2rem 1.3rem;
+ }
+ .boxed-check-group1.boxed-check-lg1 .boxed-check1 .boxed-check-label1 {
+     padding: .8rem 1.3rem;
+ }
+ 
+ /* boxed-check default theme */
+ .boxed-check-group1.boxed-check-default1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1 *{
+     color: #000000;
+ }
+ .boxed-check-group1.boxed-check-default1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1 {
+     color: #000000;
+     background-color: #ced4da;
+ }
+ .boxed-check-group1.boxed-check-default1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1,
+ .boxed-check-group1.boxed-check-default1 .boxed-check1 .boxed-check-input1:not(:disabled) + .boxed-check-label1:hover {
+     border-color: #ced4da;
+     background-color: #ced4da;
+ }
+ .boxed-check-group1.boxed-check-outline-default1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1 *{
+     color: #000000;
+ }
+ .boxed-check-group1.boxed-check-outline-default1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1 {
+     color: #000000;
+     background-color: #ffffff;
+ }
+ .boxed-check-group1.boxed-check-outline-default1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1,
+ .boxed-check-group1.boxed-check-outline-default1 .boxed-check1 .boxed-check-input1:not(:disabled) + .boxed-check-label1:hover {
+     border-color: #7fad39;;
+     background-color: #ffffff;
+ }
+ .boxed-check-group1.boxed-check-outline-default1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1::before {
+     border-color: #7fad39;;
+ }
+ 
+ /* boxed-check colorful primary theme */
+ .boxed-check-group1.boxed-check-primary1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1 *{
+     color: #ffffff;
+ }
+ .boxed-check-group1.boxed-check-primary1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1 {
+     color: #ffffff;
+     background-color: #0d6efd;
+ }
+ .boxed-check-group1.boxed-check-primary1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1,
+ .boxed-check-group1.boxed-check-primary1 .boxed-check1 .boxed-check-input1:not(:disabled) + .boxed-check-label1:hover,
+ .boxed-check-group1.boxed-check-outline-primary1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1,
+ .boxed-check-group1.boxed-check-outline-primary1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1::before,
+ .boxed-check-group1.boxed-check-outline-primary1 .boxed-check1 .boxed-check-input1:not(:disabled) + .boxed-check-label1:hover {
+     border-color: #0d6efd;
+ }
+ 
+ /* boxed-check colorful secondary theme */
+ .boxed-check-group1.boxed-check-secondary1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1 *{
+     color: #ffffff;
+ }
+ .boxed-check-group1.boxed-check-secondary1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1 {
+     color: #ffffff;
+     background-color: #6c757d;
+ }
+ .boxed-check-group1.boxed-check-secondary1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1,
+ .boxed-check-group1.boxed-check-secondary1 .boxed-check1 .boxed-check-input1:not(:disabled) + .boxed-check-label1:hover,
+ .boxed-check-group1.boxed-check-outline-secondary1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1,
+ .boxed-check-group1.boxed-check-outline-secondary1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1::before,
+ .boxed-check-group1.boxed-check-outline-secondary1 .boxed-check1 .boxed-check-input1:not(:disabled) + .boxed-check-label1:hover {
+     border-color: #6c757d;
+ }
+ 
+ /* boxed-check colorful success theme */
+ .boxed-check-group1.boxed-check-success1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1 *{
+     color: #ffffff;
+ }
+ .boxed-check-group1.boxed-check-success1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1 {
+     color: #ffffff;
+     background-color: #7fad39;;
+ }
+ .boxed-check-group1.boxed-check-success1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1,
+ .boxed-check-group1.boxed-check-success1 .boxed-check1 .boxed-check-input1:not(:disabled) + .boxed-check-label1:hover,
+ .boxed-check-group1.boxed-check-outline-success1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1,
+ .boxed-check-group1.boxed-check-outline-success1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1::before,
+ .boxed-check-group1.boxed-check-outline-success1 .boxed-check1 .boxed-check-input1:not(:disabled) + .boxed-check-label1:hover {
+     border-color: #7fad39;;
+ }
+ 
+ /* boxed-check colorful danger theme */
+ .boxed-check-group1.boxed-check-danger1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1 *{
+     color: #ffffff;
+ }
+ .boxed-check-group1.boxed-check-danger1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1 {
+     color: #ffffff;
+     background-color: #dc3545;
+ }
+ .boxed-check-group1.boxed-check-danger1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1,
+ .boxed-check-group1.boxed-check-danger1 .boxed-check1 .boxed-check-input1:not(:disabled) + .boxed-check-label1:hover,
+ .boxed-check-group1.boxed-check-outline-danger1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1,
+ .boxed-check-group1.boxed-check-outline-danger1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1::before,
+ .boxed-check-group1.boxed-check-outline-danger1 .boxed-check1 .boxed-check-input1:not(:disabled) + .boxed-check-label1:hover {
+     border-color: #dc3545;
+ }
+ 
+ /* boxed-check colorful warning theme */
+ .boxed-check-group1.boxed-check-warning1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1 *{
+     color: #000000;
+ }
+ .boxed-check-group1.boxed-check-warning1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1 {
+     color: #000000;
+     background-color: #ffc107;
+ }
+ .boxed-check-group1.boxed-check-warning1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1,
+ .boxed-check-group1.boxed-check-warning1 .boxed-check1 .boxed-check-input1:not(:disabled) + .boxed-check-label1:hover,
+ .boxed-check-group1.boxed-check-outline-warning1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1,
+ .boxed-check-group1.boxed-check-outline-warning1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1::before,
+ .boxed-check-group1.boxed-check-outline-warning1 .boxed-check1 .boxed-check-input1:not(:disabled) + .boxed-check-label1:hover {
+     border-color: #ffc107;
+ }
+ 
+ /* boxed-check colorful info theme */
+ .boxed-check-group1.boxed-check-info1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1 *{
+     color: #ffffff;
+ }
+ .boxed-check-group1.boxed-check-info1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1 {
+     color: #ffffff;
+     background-color: #0dcaf0;
+ }
+ .boxed-check-group1.boxed-check-info1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1,
+ .boxed-check-group1.boxed-check-info1 .boxed-check1 .boxed-check-input1:not(:disabled) + .boxed-check-label1:hover,
+ .boxed-check-group1.boxed-check-outline-info1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1,
+ .boxed-check-group1.boxed-check-outline-info1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1::before,
+ .boxed-check-group1.boxed-check-outline-info1 .boxed-check1 .boxed-check-input1:not(:disabled) + .boxed-check-label1:hover {
+     border-color: #0dcaf0;
+ }
+ 
+ /* boxed-check colorful dark theme */
+ .boxed-check-group1.boxed-check-dark1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1 *{
+     color: #ffffff;
+ }
+ .boxed-check-group1.boxed-check-dark1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1 {
+     color: #ffffff;
+     background-color: #212529;
+ }
+ .boxed-check-group1.boxed-check-dark1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1,
+ .boxed-check-group1.boxed-check-dark1 .boxed-check1 .boxed-check-input1:not(:disabled) + .boxed-check-label1:hover,
+ .boxed-check-group1.boxed-check-outline-dark1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1,
+ .boxed-check-group1.boxed-check-outline-dark1 .boxed-check1 .boxed-check-input1:checked + .boxed-check-label1::before,
+ .boxed-check-group1.boxed-check-outline-dark1 .boxed-check1 .boxed-check-input1:not(:disabled) + .boxed-check-label1:hover {
+     border-color: #212529;
+ }

@@ -2,7 +2,7 @@
 
 $connect = mysqli_connect("localhost","root","akom2006","project_new");
 
-$sql ="SELECT * FROM product WHERE product_suppiles = '".$_POST['suppiles_id']."'" ; 
+ $sql ="SELECT * FROM product WHERE product_suppiles = '".$_POST['suppiles_id']."'" ; 
 
 $query = mysqli_query($connect , $sql ) ;
 
@@ -34,7 +34,7 @@ $resultArray = array();
     }
 
 
-    	echo json_encode($resultArray);
+    	echo json_encode($resultArray , JSON_UNESCAPED_UNICODE);
 
 
 ?>
