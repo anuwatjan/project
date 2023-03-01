@@ -8,13 +8,19 @@
 <link rel="stylesheet" href="css/radiostyle1.css" type="text/css">
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="serve/index.js"></script>
-
+<script src="Mobile/cart.js"></script>
+<script src="serve/login.js"></script>
+<script src="serve/menu.js"></script>
 
 <?php require 'includedb/condb.php' ?>
 
 <body>
 
     <?php include 'nav.php' ; ?>
+
+    <style>
+
+    </style>
 
 
 
@@ -43,12 +49,8 @@
 
     <!-- Header-->
 
-
-
-    <p><?php echo print_r(var_Export($_SESSION['store'])) ; ?></p>
-
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-9">
 
 
             <header class="bg-dark py-5">
@@ -73,13 +75,17 @@
                         <div class="col-md-9">
 
 
-                            <h1 class="mb-5 mt-4"><?php echo $res_s['sto_name'] ; ?></h1>
+
+                            <h1 class="mb-5 mt-4"><?php echo $res_s['sto_name'] ; ?><a id="reviewcssicon"
+                                    style="float:right"><i class="bi bi-exclamation-circle"
+                                        style="color:#663399;"></i></a> </h1>
+
 
                         </div>
 
-                        <div class="col-md-3">
+                        <div class="col-md-3" id="reviewcss">
 
-                            <h3 class="mb-5 mt-4" style="color:#663399">Review & More Info</h3>
+                            <h3 class="mb-5 mt-4" style="color:#663399">More Info</h3>
 
 
                         </div>
@@ -91,10 +97,18 @@
 
 
 
+
+
                 </div>
 
 
+
+
+
             </div>
+
+
+
 
 
             <!-- รายการ -->
@@ -148,7 +162,9 @@
 
                                 // echo print_r($res_p['prod_id']) ; 
                                 ?>
-                        <div class="col-md-3 col-sm-6 mb-5" id="Product_Click"
+
+                      
+                        <div class="col-md-4 col-lg-3 col-sm-6 mb-5" id="Product_Click"
                             data-id="<?php echo $res_p['prod_id'] ; ?>">
                             <div class="card h-100">
                                 <img width="110px" height="160px" class="card-img-top zoom"
@@ -185,6 +201,11 @@
 
 
 
+                    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="bi bi-arrow-up-short " style="font-size:20px"></i></button>
+
+
+
+
                 </div>
             </div>
 
@@ -194,28 +215,34 @@
         </div>
 
 
+
+
         <!-- 9ะกร้า -->
 
 
-        <div class=" col-md-2 mt-5">
+        <div class="my-button col-md-3 mt-5">
 
             <div class="fixedcart">
 
                 <!-- เลือกการจัดส่ง -->
 
-                <div class="text-center">
+                <!-- <div class="text-center">
                     Delivery<label class="mx-2 switch">
                         <input type="checkbox" checked>
                         <span class="slider round"></span>
                     </label>Tranfer
-                </div>
+                </div> -->
 
 
                 <!-- <div class="show_num_cart"></div> -->
 
                 <P class="mt-5 mb-5 text-center">Your order from <?php echo $res_s['sto_name'] ; ?></P>
 
-                <div id="show_add_product"></div>
+                <div class="scollbar">
+
+                    <div id="show_add_product"></div>
+
+                </div>
 
 
                 <hr>
@@ -244,6 +271,24 @@
 
         </div>
 
+    </div>
+
+
+
+    <!-- ส่วนโมบาย ตะกร้า -->
+
+    <div class="my-cart " id="my-cart">
+        <button type="button" data-toggle="modal" class="btn btn-2" data-target="#Cart_Detail_Mobile"
+            style="border:none;width:100%;height:80px;">
+            <div style="float:left"> <i class="bi bi-bag-check-fill"></i>
+                <a id="Cart_Total_Num_Mobile"><?php echo $cart_id ; ?></a>
+            </div>
+            <a style="float:center"><i class="bi bi-cart-check-fill"></i>CART</a>
+            <div style="float:right">
+                <i class="bi bi-currency-dollar"></i>
+                <a id="Cart_Total_Price_Mobile"><?php echo number_format($prod_price_simple,2,'.',',') ; ?></a>
+            </div>
+        </button>
     </div>
 
 
@@ -337,10 +382,35 @@
     </div>
 
 
+    <?php require 'Mobile/Cart.php' ?>
 
 
-    <script src="serve/login.js"></script>
-    <script src="serve/menu.js"></script>
+    <!-- ตะกร้าโมบาย -->
+
+    <script>
+    // Get the button
+    let mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    </script>
+
 
 
 

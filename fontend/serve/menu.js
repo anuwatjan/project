@@ -7,12 +7,15 @@ $(document).ready(function () {
     e.preventDefault();
   });
 
+  $("#mylogin").click(function (e) {
+    window.location.href = "login.php";
+  });
 
+  $("#my-cart").click(function () {
+    $("#Cart_Detail_Mobile").modal("toggle");
+  });
 
-    $("#mylogin").click(function (e) {
-      window.location.href = "login.php";
-    });
-
-
-    
-})
+  $("#myindex").click(function (e) {
+    window.location.href = "index.php";
+  });
+});

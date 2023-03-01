@@ -1,10 +1,6 @@
 <?php 
    session_start();
    require_once '../includedb/condb.php'; 
-    
-   
-   echo print_r(var_export($_SESSION['store'])) ; 
-
 
           if(!empty($_SESSION['store']))
                     {
@@ -12,24 +8,26 @@
                         foreach($_SESSION['store'] as $product_id)
                         {
 
-                            $strSQLShow = "SELECT * FROM akksofttech_product WHERE prod_id = '".$product_id."' ";
-                            $objQuery = mysqli_query($conn , $strSQLShow)  or die(mysqli_error());
-		                    $objResult = mysqli_fetch_array($objQuery);
 
-                               echo $sql = "INSERT INTO akksofttech_cart (prod_id)  VALUES ('".$objResult['prod_name']."' )" ; 
-                                $re = mysqli_query($conn ,$sql);
-                                        if($re){
-                                            $coms = 'YES';
-                                        }else{
-                                            $coms = 'NO';
-                                        }  
+                            echo $product_id ; 
+                            // $strSQLShow = "SELECT * FROM akksofttech_product WHERE prod_id = '".$product_id."' ";
+                            // $objQuery = mysqli_query($conn , $strSQLShow)  or die(mysqli_error());
+		                    // $objResult = mysqli_fetch_array($objQuery);
 
-                                        $suu222 = $re;
+                            //    echo $sql = "INSERT INTO akksofttech_cart (prod_id)  VALUES ('".$objResult['prod_name']."' )" ; 
+                            //     $re = mysqli_query($conn ,$sql);
+                            //             if($re){
+                            //                 $coms = 'YES';
+                            //             }else{
+                            //                 $coms = 'NO';
+                            //             }  
 
-                                    $json=array('status'=> $coms , 'suu'=> $suu222 ); 
-                                    $resultArray = array();
-                                    array_push($resultArray,$json);
-                                    echo json_encode($resultArray , JSON_UNESCAPED_UNICODE );
+                            //             $suu222 = $re;
+
+                            //         $json=array('status'=> $coms , 'suu'=> $suu222 ); 
+                            //         $resultArray = array();
+                            //         array_push($resultArray,$json);
+                            //         echo json_encode($resultArray , JSON_UNESCAPED_UNICODE );
 
                                     }
         }

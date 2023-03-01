@@ -351,234 +351,160 @@ $(document).ready(function () {
   $("#ok_inset_cart").click(function (e) {
     e.preventDefault();
     var product_id = $("#show_prod_id").html(); //รหัสสินค้า
-    // Cart_Insert(product_id);
+    Cart_Insert_not(product_id);
   });
 
-  // คำสั่งลงตะกร้าจริงๆ แบบย่อย
-  function Cart_Insert(product_id) {
-    var show_sub_prod_id = $("#show_sub_prod_id").html(); //รหัสสินค้าย่อย
-    var show_sub_prodone_id = $("#show_sub_prodone_id").html(); //รหัสสินค้าย่อย 1
-    var show_quantity_de = $("#show_quantity_de").html(); //จำนวนที่รับ
-    var show_sto_id = $("#show_sto_id").html(); //รหัสร้านค้า
-    var show_category = $("#show_category").html(); //รหัสหมวดหมู่
-    var show_sub_category = $("#show_sub_category").html(); //รหัสหมวดหมู่ย่อย
-    var show_price_simple_total = $("#show_price_simple_total").html(); //ราคารวมจริง
-    var message = $("#message").val(); //หมายเหตุ
-
-    $.ajax({
-      url: "serve/add_product.php",
-      type: "POST",
-      data: {
-        product_id: product_id, //รหัสสินค้า
-        show_sub_prod_id: show_sub_prod_id, //รหัสสินค้าย่อย
-        show_sub_prodone_id: show_sub_prodone_id, //รหัสสินค้าย่อย 1
-        show_quantity_de: show_quantity_de, //จำนวนที่รับ
-        show_sto_id: show_sto_id, //รหัสร้านค้า
-        show_category: show_category, //รหัสหมวดหมู่
-        show_sub_category: show_sub_category, //รหัสหมวดหมู่ย่อย
-        show_price_simple_total: show_price_simple_total, //ราคารวมจริง
-        message: message, //หมายเหตุ
-      },
-      dataType: "json",
-      success: function (data) {
-        console.log(data);
-        htmls = "";
-        var htmls_num = 0;
-        var toto = 0;
-        $.each(data, function (key, val) {
-          // console.log(data.mainArray_subproduct[0]);
-
-          // if (val["status"] == "NOS") {
-          //   Swal.fire({
-          //     position: "center",
-          //     icon: "error",
-          //     title: "Please Select SubProduct",
-          //     showConfirmButton: false,
-          //     timer: 1500,
-          //   });
-
-          //  } else if (val["status"] == "NOS1") {
-          //   Swal.fire({
-          //     position: "center",
-          //     icon: "error",
-          //     title: "Please Select SubProduct1",
-          //     showConfirmButton: false,
-          //     timer: 1500,
-          //   });
-
-          // } else if (val["status"] == "NO") {
-          //   Swal.fire({
-          //     position: "center",
-          //     icon: "error",
-          //     title: "saved successfully",
-          //     showConfirmButton: false,
-          //     timer: 1500,
-          //   });
-
-          // } else if (val["status"] == "NOSsto") {
-          //   Swal.fire({
-          //     title: "Are you sure?",
-          //     text: "Your basket contains another store.",
-          //     icon: "warning",
-          //     showCancelButton: true,
-          //     confirmButtonColor: "#3085d6",
-          //     cancelButtonColor: "#d33",
-          //     confirmButtonText: "Yes, Change it!",
-          //   }).then((result) => {
-          //     if (result.isConfirmed) {
-          //       changecart_inset("det");
-          //       Swal.fire("Change!", "CHANGE OK.", "success");
-          //     }
-          //   });
-
-          // }
-
-          htmls += '<div class="d-flex align-items-center mb-5">';
-
-          htmls +=
-            '<img class="img-fluid flex-shrink-0 rounded-circle" src="../backend/getimg/prod/' +
-            val["product_img"] +
-            '" alt="' +
-            val["product_name"] +
-            '" style="width: 65px; height: 65px;">';
-
-          htmls += '<div class="ps-4">';
-
-          htmls +=
-            '<h6 class="mb-1"> ' +
-            val["product_name"] +
-            "</br>" +
-            val["sprod_name"] +
-            val["message"] +
-            " </h6>";
-          htmls +=
-            "<span>" +
-            val["product_quantity"] +
-            " x " +
-            (val["product_price"] * 1).toFixed(2) +
-            "</span> ";
-
-          htmls += "<br>";
-
-          htmls +=
-            '<button type="button"   id="ok_add_product_dow"   class="btn btn-warning text-white" product_id = "' +
-            val["product_id"] +
-            '" >-</button> ';
-          htmls +=
-            '<button type="button"   id="ok_add_product_up"   class="btn btn-success" product_id = "' +
-            val["product_id"] +
-            '" >+</button> ';
-
-          htmls +=
-            '<button type="button"   id="ok_add_product_dele"   class="btn btn-danger" product_id = "' +
-            val["product_id"] +
-            '" ><i class="bi bi-archive-fill"></i></button> ';
-
-          htmls += "</div>";
-
-          htmls += "</div>";
-
-          toto =
-            toto + val["product_quantity"] * 1 * (val["product_price"] * 1);
-        });
-
-        $("#show_add_product").html(htmls);
-        $(".toto_add_product").html((toto * 1).toFixed(2));
-      },
-    });
-  }
-
   // คำสั่งลงตะกร้าจริงๆ แบบไม่ย่อย
+    
   function Cart_Insert_not(product_id) {
+    var show_sub_prod_id = $("#show_sub_prod_id").html(); //รหัสสินค้าย่อย
+      var show_sub_prodone_id = $("#show_sub_prodone_id").html(); //รหัสสินค้าย่อย 1
+      var show_quantity_de = $("#show_quantity_de").html(); //จำนวนที่รับ
+      var show_sto_id = $("#show_sto_id").html(); //รหัสร้านค้า
+      var show_category = $("#show_category").html(); //รหัสหมวดหมู่
+      var show_sub_category = $("#show_sub_category").html(); //รหัสหมวดหมู่ย่อย
+      var show_price_simple_total = $("#show_price_simple_total").html(); //ราคารวมจริง
+      var message = $("#message").val(); //หมายเหตุ
     $.ajax({
       url: "serve/add_product_not.php",
       type: "POST",
       data: {
         product_id: product_id, //รหัสสินค้า
+              show_sub_prod_id: show_sub_prod_id, //รหัสสินค้าย่อย
+              show_sub_prodone_id: show_sub_prodone_id, //รหัสสินค้าย่อย 1
+              show_quantity_de: show_quantity_de, //จำนวนที่รับ
+              show_sto_id: show_sto_id, //รหัสร้านค้า
+              show_category: show_category, //รหัสหมวดหมู่
+              show_sub_category: show_sub_category, //รหัสหมวดหมู่ย่อย
+              show_price_simple_total: show_price_simple_total, //ราคารวมจริง
+              message: message, //หมายเหตุ
       },
-      // dataType: "json",
+      dataType: "json",
       success: function (data) {
         htmls = "";
         var htmls_num = 0;
         var toto = 0;
         var suu = "";
         $.each(data, function (key, val) {
+          
+          console.log(data);
+          
+          if(val["product"] != null ){
+          
+          $.each(val["product"], function (key, val) {
+
           htmls += '<div class="d-flex align-items-center mb-5">';
 
-          htmls +=
-            '<img class="img-fluid flex-shrink-0 rounded-circle" src="../backend/getimg/prod/' +
-            val["product_img"] +
-            '" alt="' +
-            val["product_name"] +
-            '" style="width: 65px; height: 65px;">';
+          htmls += '<img class="img-fluid flex-shrink-0 rounded-circle" src="../backend/getimg/prod/' + val["product_img"] + '" alt="' + val["product_name"] + '" style="width: 65px; height: 65px;">';
 
           htmls += '<div class="ps-4">';
 
-          htmls +=
-            '<h6 class="mb-1"> ' +
-            val["product_name"] +
-            val["sprod_name"] +
-            " </h6>";
-          htmls +=
-            "<span>" +
-            val["product_quantity"] +
-            " x " +
-            (val["product_price"] * 1).toFixed(2) +
-            "</span> ";
+          htmls +='<h6 class="mb-1"> ' +val["product_name"] + val["sprod_name"] + " </h6>";
+          htmls += "<span>" + val["product_quantity"] +  " x " + (val["product_price"] * 1).toFixed(2) + "</span> ";
 
           htmls += "<br>";
 
-          htmls +=
-            '<button type="button"   id="ok_add_product_dow"   class="btn btn-warning text-white" product_id = "' +
-            val["product_id"] +
-            '" >-</button> ';
-          htmls +=
-            '<button type="button"   id="ok_add_product_up"   class="btn btn-success" product_id = "' +
-            val["product_id"] +
-            '" >+</button> ';
+          htmls +=  '<button type="button"   id="ok_add_product_dow"   class="btn btn-warning text-white" product_id = "' +  val["product_id"] +  '" >-</button> ';
+          htmls += '<button type="button"   id="ok_add_product_up"   class="btn btn-success" product_id = "' +  val["product_id"] +  '" >+</button> ';
 
-          htmls +=
-            '<button type="button"   id="ok_add_product_dele"   class="btn btn-danger" product_id = "' +
-            val["product_id"] +
-            '" ><i class="bi bi-archive-fill"></i></button> ';
+          htmls +=  '<button type="button"   id="ok_add_product_dele"   class="btn btn-danger" product_id = "' + val["product_id"] + '" ><i class="bi bi-archive-fill"></i></button> ';
 
           htmls += "</div>";
 
           htmls += "</div>";
 
-          toto =
-            toto + val["product_quantity"] * 1 * (val["product_price"] * 1);
+          toto = toto + val["product_quantity"] * 1 * (val["product_price"] * 1);
 
-          // if (val["sum"] > 0) {
-          //   suu = "Your order from";
-          // } else {
-          //   suu = "Not Order";
-          // }
+          });
+
+        }else{
+
+            $.each(val["sproduct"], function (key, val) {
+
+          htmls += '<div class="d-flex align-items-center mb-5">';
+
+          htmls += '<img class="img-fluid flex-shrink-0 rounded-circle" src="../backend/getimg/prod/' + val["product_img"] + '" alt="' + val["product_name"] + '" style="width: 65px; height: 65px;">';
+
+          htmls += '<div class="ps-4">';
+
+          htmls +='<h6 class="mb-1"> ' +val["product_name"] + val["sprod_name"] + " </h6>";
+          htmls += "<span>" + val["product_quantity"] +  " x " + (val["product_price"] * 1).toFixed(2) + "</span> ";
+
+          htmls += "<br>";
+
+          htmls +=  '<button type="button"   id="ok_add_product_dow"   class="btn btn-warning text-white" product_id = "' +  val["product_id"] +  '" >-</button> ';
+          htmls += '<button type="button"   id="ok_add_product_up"   class="btn btn-success" product_id = "' +  val["product_id"] +  '" >+</button> ';
+
+          htmls +=  '<button type="button"   id="ok_add_product_dele"   class="btn btn-danger" product_id = "' + val["product_id"] + '" ><i class="bi bi-archive-fill"></i></button> ';
+
+          htmls += "</div>";
+
+          htmls += "</div>";
+
+          toto = toto + val["product_quantity"] * 1 * (val["product_price"] * 1);
+
+          });
+
+        }
+
+         
+
         });
 
         $("#show_add_product").html(htmls);
         $(".toto_add_product").html((toto * 1).toFixed(2));
-        // $(".show_num_cart").html('<p>'+suu+'</p>');
       },
     });
   }
 
   // กดปุ่ม checkout
   $("#checkout").click(function () {
+    // เช็คล็อคอินยัง
     $.ajax({
-      url: "serve/Product_Insert_Cart.php",
+      url: "serve/checklogin.php",
       type: "post",
       data: {
       },
-      // dataType: "json",
+      dataType: "json",
       success: function (data) {
         $.each(data, function (key, val) {
-          console.log(data);
+            if (val["status"] == "NO") {
+              let timerInterval;
+              Swal.fire({
+                title: "please wait a moment Checking login information",
+                html: "not logged in going to internal login page <b></b> milliseconds.",
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: () => {
+                  Swal.showLoading();
+                  const b = Swal.getHtmlContainer().querySelector("b");
+                  timerInterval = setInterval(() => {
+                    b.textContent = Swal.getTimerLeft();
+                  }, 100);
+                },
+                willClose: () => {
+                  clearInterval(timerInterval);
+                },
+              }).then((result) => {
+                if (result.dismiss === Swal.DismissReason.timer) {
+                  window.location.href = "login.php";
+                }
+              });
+              // ไม้มีตะกร้า
+            }else if(val["status" == "NOT"]){
+              Swal.fire({
+                position: "center",
+                icon: "warning",
+                title: "Your work has been saved",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+            }else{
+              window.location.href = "CheckOut.php";
+            }
         });
       },
     });
-    // window.location.href = "CheckOut.php";
-    // }
   });
 
   // รับค่าน้องสวิต
