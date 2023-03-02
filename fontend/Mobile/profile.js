@@ -1,26 +1,19 @@
-
 $(document).ready(function () {
+  $(document).bind("contextmenu", function (e) {
+    e.preventDefault();
+  });
 
-    $(document).bind("contextmenu", function (e) {
-      e.preventDefault();
-    });
-  
-    $(document).bind("selectstart", function (e) {
-      e.preventDefault();
-    });
+  $(document).bind("selectstart", function (e) {
+    e.preventDefault();
+  });
 
+  $("#profile").click(function () {
+    window.location.href = "Mobile/profile_edit.php";
+  });
 
-$("#profile").click(function(){
-
-    window.location.href="Mobile/profile_edit.php";
-  
-  })
-
-  $("#email").click(function(){
-
-    window.location.href="Mobile/email_edit.php";
-  
-  })
+  $("#email").click(function () {
+    window.location.href = "Mobile/email_edit.php";
+  });
 
   $("#clickmodaladdress1").on("click", function () {
     console.log("เริ่มต้นแสดงฟอร์มที่อยู่");
@@ -74,16 +67,12 @@ $("#profile").click(function(){
     });
   });
 
-  $("#password").click(function(){
-
-    window.location.href="Mobile/password_edit.php";
-  
-  })
-  $("#phone").click(function(){
-
-    window.location.href="Mobile/phone_edit.php";
-  
-  })
+  $("#password").click(function () {
+    window.location.href = "Mobile/password_edit.php";
+  });
+  $("#phone").click(function () {
+    window.location.href = "Mobile/phone_edit.php";
+  });
 
   $("#myindex").click(function (e) {
     window.location.href = "../Profile.php";
@@ -272,5 +261,4 @@ $("#profile").click(function(){
       error: function () {},
     });
   });
-
-})
+});

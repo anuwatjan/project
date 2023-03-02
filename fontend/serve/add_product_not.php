@@ -45,9 +45,15 @@
                                                             array_push($spromainArray , $sproarrayBill);
                                                         }
                                                     }
-                                            }else{
-                                                // ไม่มีเมนุย่อยเลย เอาลงได้ปกติ 
                                                     
+                                            }else{
+
+                                                // ไม่มีเมนุย่อยเลย เอาลงได้ปกติ 
+                                                                                                    
+                                                    // if ($_SESSION['store'][$product_id] > 1 ){
+                                                    //     $_SESSION['store'][$product_id][0]++;
+                                                    // }
+                    
                                                     
                                                     $sql = "SELECT * FROM `akksofttech_product`  WHERE `prod_id` IN (".implode(', ', array_keys($_SESSION['store'])).")";
                                                     $result = mysqli_query($conn,$sql) or die(mysqli_error());

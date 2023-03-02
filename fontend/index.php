@@ -18,11 +18,15 @@
 
     <?php include 'nav.php' ; ?>
 
-    <style>
 
-    </style>
+    <style type="text/css">
 
-
+.footer {
+   display: block;
+   text-align: center;
+   bottom: 0;
+}
+</style>
 
     <!-- ผู้ใช้งาน -->
     <div id="show_cus_id" style="display:none;"><?php echo $_SESSION['akksofttechsess_cusid'] ;  ?></div>
@@ -201,7 +205,7 @@
 
 
 
-                    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="bi bi-arrow-up-short " style="font-size:20px"></i></button>
+                    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="bi bi-arrow-up-short " style="font-size:22px"></i></button>
 
 
 
@@ -236,11 +240,11 @@
 
                 <!-- <div class="show_num_cart"></div> -->
 
-                <P class="mt-5 mb-5 text-center">Your order from <?php echo $res_s['sto_name'] ; ?></P>
+                <P class="mt-2 mb-2 text-center">Your order from <?php echo $res_s['sto_name'] ; ?></P>
 
                 <div class="scollbar">
 
-                    <div id="show_add_product"></div>
+                    <div class="show_add_product"></div>
 
                 </div>
 
@@ -256,9 +260,9 @@
 
                     <div class="d-grid">
 
-                        <button id="checkout" class="btn btn-primary" type="button">GO TO CHECKOUT</button>
+                        <button id="checkout" class="btn primary-btn" type="button">GO TO CHECKOUT</button>
 
-                        <a href="destroyer.php" class="btn btn-danger" type="button">DESTROYER</a>
+                        <a href="destroyer.php" class="btn primary-btndet" type="button">DESTROYER</a>
 
 
                     </div>
@@ -271,9 +275,28 @@
 
         </div>
 
+
+
+        <hr class="mt-3">
+
+
+        <!-- Footer-->
+        <footer class="footer py-5" style="background:#663399">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
+        </footer>
+
+        
+
+        
+
     </div>
 
 
+
+
+
+
+    
 
     <!-- ส่วนโมบาย ตะกร้า -->
 
@@ -286,7 +309,7 @@
             <a style="float:center"><i class="bi bi-cart-check-fill"></i>CART</a>
             <div style="float:right">
                 <i class="bi bi-currency-dollar"></i>
-                <a id="Cart_Total_Price_Mobile"><?php echo number_format($prod_price_simple,2,'.',',') ; ?></a>
+                <a  class="Cart_Total_Price_Mobile_session text-white"></a>
             </div>
         </button>
     </div>
@@ -339,10 +362,10 @@
 
                 <div class="container">
                     <div class="row">
-                        <a id="ok_insert_close" class="text-center btn btn-danger text-white"
+                        <a id="ok_insert_close" class="text-center btn primary-btndet text-white"
                             style="bottom: 0;left: 0;right: 0;width: 50%;"> <i class="fa fa-arrow-left"
                                 aria-hidden="true"></i> Close </a>
-                        <a id="ok_inset_cart" class="text-center btn btn-primary text-white"
+                        <a id="ok_inset_cart" class="text-center btn primary-btn text-white"
                             style="bottom: 0;left: 0;right: 0;width: 50%;">Add To Cart<div
                                 id="show_price_simple_total_in_button"> 0</div></a>
                     </div>
@@ -352,6 +375,8 @@
     </div>
 
 
+    
+
     <!-- modal ส่วนของรีวิว -->
 
     <div class="modal fade" id="Review_Detail<?php echo $res_s['sto_id'] ; ?>" tabindex="-1"
@@ -360,7 +385,7 @@
             <div class="modal-content">
                 <div class="modal-header" style="padding:0rem 0rem; ">
                     <div class="col-md-12" style="padding-right:0px;     padding-left: 0px;">
-                        <div id="Review_Show_Detail_Images"></div>
+                        <div class="center" id="Review_Show_Detail_Images"></div>
                     </div>
                 </div>
                 <div class="modal-body">
@@ -387,6 +412,9 @@
 
     <!-- ตะกร้าโมบาย -->
 
+
+
+
     <script>
     // Get the button
     let mybutton = document.getElementById("myBtn");
@@ -410,6 +438,9 @@
         document.documentElement.scrollTop = 0;
     }
     </script>
+
+
+
 
 
 

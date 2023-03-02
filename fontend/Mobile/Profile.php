@@ -6,7 +6,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div id="profile">
-                                Profile <i style="float:right;color:rebeccapurple;" class="fa fa-pencil"
+                                Profile <i style="float:right;color:rebeccapurple;" class="bi bi-pencil-fill"
                                     aria-hidden="true"></i>
                                 <h5><?php echo $result['cus_name'] ; ?> <?php echo $result['cus_surname'] ; ?> </h5>
                             </div>
@@ -15,7 +15,7 @@
                     <div class="card mt-2">
                         <div class="card-body">
                             <div id="email">
-                                Email <i style="float:right;color:rebeccapurple;" class="fa fa-pencil"
+                                Email <i style="float:right;color:rebeccapurple;" class="bi bi-pencil-fill"
                                     aria-hidden="true"></i>
                                 <h5><?php echo $result['cus_email'] ; ?> </h5>
                             </div>
@@ -25,7 +25,7 @@
                     <div class="card mt-2">
                         <div class="card-body">
                             <div id="password">
-                                Password <i style="float:right;color:rebeccapurple;" class="fa fa-pencil"
+                                Password <i style="float:right;color:rebeccapurple;" class="bi bi-pencil-fill"
                                     aria-hidden="true"></i>
                                 <h5> </h5>
                             </div>
@@ -34,7 +34,7 @@
                     <div class="card mt-2">
                         <div class="card-body">
                             <div id="phone">
-                                Mobile Number <i style="float:right;color:rebeccapurple;" class="fa fa-pencil"
+                                Mobile Number <i style="float:right;color:rebeccapurple;" class="bi bi-pencil-fill"
                                     aria-hidden="true"></i>
                                 <h5><?php echo $result['cus_phone'] ; ?> </h5>
                             </div>
@@ -71,15 +71,16 @@
                                                 <div class="single-form form-default">
 
 
-                                                <br>
+                                                    <br>
 
                                                     <div class="row">
 
 
                                                         <div class="col-md-12">
-                                                            <p><?php echo $res['cusa_name'] ; echo "         "  ; echo $res['cusa_surname'] ;  ?>|  <?php echo $res['cusa_phone'] ; ?> </p>
+                                                            <p><?php echo $res['cusa_name'] ; echo "         "  ; echo $res['cusa_surname'] ;  ?>|
+                                                                <?php echo $res['cusa_phone'] ; ?> </p>
                                                             <p class="m-2"><?php echo $res['cusa_address']  ; ?>
-                                                           
+
                                                                 <?php echo $res['cusa_province']  ; ?> ,
                                                                 <?php echo $res['cusa_zipcode']  ; ?></p>
 
@@ -88,24 +89,23 @@
 
                                                         <div class="col-md-4">
 
-<div class="row">
+                                                            <div class="row">
 
-                                                            <!-- <a class="main-btn primary-btn clickedit_address"  data-id='<?php echo $res['cusa_id'] ; ?>'>EDIT</a> -->
-
-
-                                                            <a class="main-btn primary-btn"
-                                                                href="edit_address.php?cusa_id=<?php echo $res['cusa_id'] ; ?>"
-                                                                data-id='<?php echo $res['cusa_id'] ; ?>'><i
-                                                                    class="fa fa-pencil" aria-hidden="true"></i></a>
+                                                                <!-- <a class="main-btn primary-btn clickedit_address"  data-id='<?php echo $res['cusa_id'] ; ?>'>EDIT</a> -->
 
 
-                                                            <a type="button"
-                                                                class="text-white main-btn primary-btndet clickdelete_addressid"
-                                                                data-id="<?php echo $res['cusa_id'] ; ?>"><i
-                                                                    class="fa fa-times" aria-hidden="true"></i></a>
+                                                                <a class="main-btn primary-btn"
+                                                                    href="edit_address.php?cusa_id=<?php echo $res['cusa_id'] ; ?>"
+                                                                    data-id='<?php echo $res['cusa_id'] ; ?>'><i
+                                                                        class="bi bi-pencil-fill" aria-hidden="true"></i></a>
 
 
-                                                                    </div>
+                                                                <a type="button"
+                                                                    class="text-white main-btn primary-btndet clickdelete_addressid"
+                                                                    data-id="<?php echo $res['cusa_id'] ; ?>"><i class="bi bi-x"></i></a>
+
+
+                                                            </div>
 
 
 

@@ -26,6 +26,15 @@
     <!-- รับค่าจำนวนสินค้าในตะกร้ามา -->
     <div id="show_sto_id" style="display:none;"><?php echo $num11  ; ?></div>
 
+
+      <style>
+    form {
+        width: 100%;
+    }
+    </style>
+
+
+
     <style>
     @font-face {
         font-family: myFirstFont;
@@ -56,7 +65,7 @@
 
     .scoollbar {
         width: 100%;
-        height: 80%;
+        height: 20%;
         overflow-y: scroll;
     }
     </style>
@@ -112,9 +121,9 @@
                                 <div class="shoping__checkout">
                                     <h5 class="mx-2"><a class="btn text-white" style="background:#663399">2</a> Payment
                                         Method</h5>
-                                    <div class="container">
+                                    <div style=" border-style:   solid;border-color:rebeccapurple" class="container">
 
-                                        <div class="demo-inline-spacing mt-3 mx-3">
+                                        <div  class="demo-inline-spacing mt-3 mx-3">
                                             <div class="list-group">
                                                 <label class="listgroupitem2">
                                                     <div class="form-check">
@@ -130,7 +139,7 @@
                                         <!-- เพิ่มข้อมูลบัญชีการชำระเงิน -->
                                         <div id="showbank">
                                             <form method="post" enctype='multipart/form-data'>
-                                                <div class="container">
+                                       
                                                     <div class=" mt-2 row">
                                                         <div class="col-lg-6 col-md-6">
                                                             Attach Slip!
@@ -143,7 +152,10 @@
                                                             <textarea name="logo_img64" id="logo_img64"
                                                                 class="form-control" style="display:none;"></textarea>
                                                         </div>
-                                                        <?php 
+                                                  
+                                                    </div>
+                                                    <div class=" mt-2 row">
+                                                              <?php 
                                                     $date = date("Y-m-d H:i") ; ?>
                                                         <div class="col-lg-6 col-md-6 col-sm-12">
                                                             Transfer Date
@@ -153,8 +165,6 @@
                                                                 name="tranfer_date" oninput="this.setCustomValidity('')"
                                                                 id="tranfer_date"></input>
                                                         </div>
-                                                    </div>
-                                                    <div class=" mt-2 row">
                                                         <div class=" col-lg-6 col-md-6 ">
                                                             Transfer amount
                                                             <input required type="text" autocomplete="off" name="amount"
@@ -255,7 +265,7 @@
                                                     </div>
                                                     <div class=" mt-2 row">
                                                     </div>
-                                                </div>
+                                                
                                             </form>
                                         </div>
                                         <!-- เพิ่มข้อมูลบัญชีการชำระเงิน -->
@@ -293,9 +303,9 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="shoping__checkout">
-                                    <a onclick="history.back()" class="text-white btn btn-danger m-2"><i
+                                    <a id="myindex" class="text-white btn primary-btndet m-2"><i
                                             class="fa fa-arrow-left" aria-hidden="true"></i> BACK </a>
-                                    <a id="insert_to_purchase" class="text-white btn btn-primary m-2"> <i
+                                    <a id="insert_to_purchase_test" class="text-white btn primary-btn m-2"> <i
                                             class="fa fa-check" aria-hidden="true"></i>
                                         CONFIRM ORDER</btr></a>
 
@@ -310,6 +320,7 @@
                         </div>
                     </div>
 
+                    
                     <style>
                     .my-cart22 {
                         position: fixed;
@@ -368,10 +379,10 @@
 
                     <div class="my-cart22" id="my-cart22">
                         <div class="row">
-                            <a onclick="history.back()" class="text-center text-white main-btn primary-btndet"
+                            <a id="myindex" class="text-center text-white btn primary-btndet"
                                 style="bottom: 0;left: 0;right: 0;width: 50%;"> BACK </a>
 
-                            <a id="insert_to_purchase22" class="text-center text-white main-btn primary-btnpri"
+                            <a id="insert_to_purchase22" class="text-center text-white btn primary-btn"
                                 style="bottom: 0;left: 0;right: 0;width: 50%;">
                                 CONFIRM ORDER</btr></a>
                         </div>
@@ -391,16 +402,20 @@
                     <div class="container mt-1 scoollbar" id="container">
 
 
-                        <div id="show_add_product"></div>
+                        <div id="show_add_product1"></div>
 
 
 
 
 
-                        <h3 class="text-center justify-content-center "><strong>Total Price</strong></h3>
-                        <h1 class="text-center mb-3 toto_add_product double_line">สินค้าบริษัท </h1>
 
                     </div>
+
+
+                    <br>
+                    
+                        <h3 class="text-center justify-content-center "><strong>Total Price</strong></h3>
+                        <h1 class="text-center mb-3 toto_add_product double_line">สินค้าบริษัท </h1>
 
 
                 </div>
@@ -558,11 +573,11 @@
                         <div class="modal-footer">
                             <div class="row mb-3">
                                 <div class="col">
-                                    <div type="button" class="main-btn primary-btndet" onclick="history.back()">EXIT
-                                    </div>
+                                    <a href="index.php" class="btn btn-danger">EXIT</a>
+                               
                                 </div>
                                 <div class="col">
-                                    <button type="submit" class="main-btn primary-btn" style="border:none;"
+                                    <button type="submit" class="btn btn-primary" style="border:none;"
                                         name="insert" id="insert" value="Insert">SAVE</button>
                                 </div>
                             </div>
@@ -749,7 +764,7 @@
 
         function resizeInCanvas(img) {
             /////////  3-3 manipulate image
-            var perferedWidth = 1024;
+            var perferedWidth = 400;
             var ratio = perferedWidth / img.width;
             var canvas = $("<canvas>")[0];
             canvas.width = img.width * ratio;

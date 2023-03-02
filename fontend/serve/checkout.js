@@ -222,12 +222,188 @@ $(document).ready(function () {
         });
       });
 
-    // กดปุ่มส่งคอนเฟริ์มออเดอร์ตามประเภท
-    $("#insert_to_purchase").click(function () {
+   
+
+    // คอนเฟิมออเดอร์ของทรานเฟอร์
+  //   function PO_Insert_Tranfer(show_address_id, show_sto_id){
+  //   var show_payment_id = $("#show_payment_id").html();
+  //   var tranfershow = $("#tranfershow").html();
+  //   var sto_id = $("#sto_id").html();
+  //   var bac_id = $("#bac_id").html();
+  //   var tranfer_date = $("#tranfer_date").val();
+  //   var amount = $("#amount").val();
+  //   var bac_name = $("#bac_name").val();
+  //   var bac_number = $("#bac_number").val();
+  //   var bac_account = $("#bac_account").val();
+  //   var logo_img64 = $("#logo_img64").val();
+  //   console.log(tranfershow , sto_id , bac_id , tranfer_date , amount , bac_name , bac_number , bac_account  );
+  //   if ( bac_id != 0 && amount != "" && bac_name != "" && bac_number != "" && bac_account != ""  && logo_img64 != "" ) {
+  //     $.ajax({
+  //       url: "serve/PO_Insert_Tranfer.php",
+  //       type: "post",
+  //       data: {
+  //         show_address_id: show_address_id,
+  //         show_sto_id: show_sto_id,
+  //         show_payment_id: show_payment_id,
+  //       },
+  //       dataType: "json",
+  //       success: function (data) {
+  //         console.log(data);
+  //         $.each(data, function (key, val) {
+  //           var po_id = val["po_id"];
+  //           console.log(po_id);
+  //           if (val["status"] == "YES" && val["status_po"] == "1") {
+  //             InsertBank(po_id);
+  //             DeleteCart();
+  //           } else if (val["status"] == "YES" && val["status_po"] == "7") {
+  //             DeleteCart();
+  //             Swal.fire({
+  //               position: "center",
+  //               icon: "success",
+  //               title: "Your work has been saved",
+  //               showConfirmButton: false,
+  //               timer: 1500,
+  //             });
+  //             window.location.href = "myorder_all.php";
+  //           } else {
+  //             Swal.fire({
+  //               position: "center",
+  //               icon: "error",
+  //               title: "Your work has been Not saved",
+  //               showConfirmButton: false,
+  //               timer: 1500,
+  //             });
+  //           }
+  //         });
+  //       },
+  //     });
+  //   }else{
+  //     Swal.fire({
+  //       position: "center",
+  //       icon: "error",
+  //       title: "Please complete the information.",
+  //       showConfirmButton: false,
+  //       timer: 1500,
+  //     });
+  //   }
+  // }
+
+  // function InsertBank(po_id){
+  //   var tranfershow = $("#tranfershow").html();
+  //   var sto_id = $("#sto_id").html();
+  //   var bac_id = $("#bac_id").html();
+  //   var tranfer_date = $("#tranfer_date").val();
+  //   var amount = $("#amount").val();
+  //   var bac_name = $("#bac_name").val();
+  //   var bac_number = $("#bac_number").val();
+  //   var bac_account = $("#bac_account").val();
+  //   var logo_img64 = $("#logo_img64").val();
+  //   var imagebroswer =  $("#imagebroswer").val();
+  //   if (sto_id != "" && tranfershow != "" && bac_id != 0 && amount != "" && bac_name != "" && bac_number != "" && bac_account != ""  && logo_img64 != "" ) {
+  //     $.ajax({
+  //       url: "serve/Bank_Insert.php",
+  //       type: "post",
+  //       data: {
+  //         po_id: po_id,
+  //         bac_id: bac_id , 
+  //         tranfer_date: tranfer_date,
+  //         bac_name: bac_name,
+  //         bac_number: bac_number,
+  //         bac_account: bac_account,
+  //         logo_img64: logo_img64,
+  //         amount:amount ,
+  //         imagebroswer:imagebroswer ,
+  //       },
+  //       dataType: "json",
+  //       success: function (data) {
+  //         console.log(data);
+  //         $.each(data, function (key, val) {
+  //           if (val["status"] == "YES") {
+  //             Swal.fire("SAVE!", "OK.", "success");
+  //             window.location.href = "myorder_all.php";
+  //           } else {
+  //             Swal.fire({
+  //               position: "center",
+  //               icon: "error",
+  //               title: "ERROR",
+  //               showConfirmButton: false,
+  //               timer: 1500,
+  //             });
+  //             location.reload();
+  //           }
+  //         });
+  //       },
+  //     });
+  //   } else {
+  //     Swal.fire({
+  //       position: "center",
+  //       icon: "error",
+  //       title: "Please Check Input",
+  //       showConfirmButton: false,
+  //       timer: 1500,
+  //     });
+  //   }
+  // }
+  
+  // // คอนเฟริมออเดอร์ของเดลิเวอรี่
+  // function PO_Insert_Delivery(show_address_id, show_sto_id){
+  //   var show_payment_id = $("#show_payment_id").html();
+  //   $.ajax({
+  //     url: "serve/PO_Insert_Tranfer.php",
+  //     type: "post",
+  //     data: {
+  //       show_address_id: show_address_id,
+  //       show_sto_id: show_sto_id,
+  //       show_payment_id: show_payment_id,
+  //     },
+  //     dataType: "json",
+  //     success: function (data) {
+  //       console.log(data);
+  //       $.each(data, function (key, val) {
+  //         var po_id = val["po_id"];
+  //         console.log(po_id);
+  //         if (val["status"] == "YES" && val["status_po"] == "1") {
+  //           DeleteCart();
+  //           Swal.fire({
+  //             position: "center",
+  //             icon: "success",
+  //             title: "Your work has been saved",
+  //             showConfirmButton: false,
+  //             timer: 1500,
+  //           });
+  //           window.location.href = "bank.php?po_id=" + po_id;
+  //         } else if (val["status"] == "YES" && val["status_po"] == "7") {
+  //           DeleteCart();
+  //           Swal.fire({
+  //             position: "center",
+  //             icon: "success",
+  //             title: "Your work has been saved",
+  //             showConfirmButton: false,
+  //             timer: 1500,
+  //           });
+  //           window.location.href = "myorder_all.php";
+  //         } else {
+  //           Swal.fire({
+  //             position: "center",
+  //             icon: "error",
+  //             title: "Your work has been Not saved",
+  //             showConfirmButton: false,
+  //             timer: 1500,
+  //           });
+  //         }
+  //       });
+  //     },
+  //   });
+  // }
+
+
+  // กดปุ่ม insert ลง cart และ po
+  $("#insert_to_purchase_test").click(function(){
       var show_payment_id = $("#show_payment_id").html();
       var show_address_id = $("#show_address_id").html();
       var show_sto_id = $("#show_sto_id").html();
-      Swal.fire({
+    // console.log(show_payment_id);
+    Swal.fire({
         title: "Are you sure?",
         text: "You won't be able to revert this!",
         icon: "warning",
@@ -247,197 +423,21 @@ $(document).ready(function () {
               timer: 1500,
             });
           } else {
-            var cartnumber = $("#show_sto_id").html();
-            if (!cartnumber) {
-              Swal.fire({
-                position: "center",
-                icon: "error",
-                title: "Please Shopping ",
-                showConfirmButton: false,
-                timer: 5000,
-              });
-            } else {
-              if (show_payment_id == 1) {
+            // เช็คว่ารับเงื่อนไขไหนมา
+            if (show_payment_id == 1) {
                 PO_Insert_Tranfer(show_address_id, show_sto_id);
               } else if (show_payment_id == 2) {
                 PO_Insert_Delivery(show_address_id, show_sto_id);
               }
-            }
           }
         }
-      });
-    });
+      })
+  });
 
-      $("#insert_to_purchase22").click(function () {
-        var show_payment_id = $("#show_payment_id").html();
-        var show_address_id = $("#show_address_id").html();
-        var show_sto_id = $("#show_sto_id").html();
-        Swal.fire({
-          title: "Are you sure?",
-          text: "You won't be able to revert this!",
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Yes, Confirm Order!",
-          cancelButtonText: "Exit!",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            if (show_address_id == 0) {
-              Swal.fire({
-                position: "center",
-                icon: "error",
-                title: "Please Select Address !",
-                showConfirmButton: false,
-                timer: 1500,
-              });
-            } else {
-              var cartnumber = $("#show_sto_id").html();
-              if (!cartnumber) {
-                Swal.fire({
-                  position: "center",
-                  icon: "error",
-                  title: "Please Shopping ",
-                  showConfirmButton: false,
-                  timer: 5000,
-                });
-              } else {
-                if (show_payment_id == 1) {
-                  PO_Insert_Tranfer(show_address_id, show_sto_id);
-                } else if (show_payment_id == 2) {
-                  PO_Insert_Delivery(show_address_id, show_sto_id);
-                }
-              }
-            }
-          }
-        });
-      });
-
-    // คอนเฟิมออเดอร์ของทรานเฟอร์
-    function PO_Insert_Tranfer(show_address_id, show_sto_id){
+  function PO_Insert_Delivery(show_address_id, show_sto_id) {
     var show_payment_id = $("#show_payment_id").html();
-    var tranfershow = $("#tranfershow").html();
-    var sto_id = $("#sto_id").html();
-    var bac_id = $("#bac_id").html();
-    var tranfer_date = $("#tranfer_date").val();
-    var amount = $("#amount").val();
-    var bac_name = $("#bac_name").val();
-    var bac_number = $("#bac_number").val();
-    var bac_account = $("#bac_account").val();
-    var logo_img64 = $("#logo_img64").val();
-    console.log(tranfershow , sto_id , bac_id , tranfer_date , amount , bac_name , bac_number , bac_account  );
-    if ( bac_id != 0 && amount != "" && bac_name != "" && bac_number != "" && bac_account != ""  && logo_img64 != "" ) {
-      $.ajax({
-        url: "serve/PO_Insert_Tranfer.php",
-        type: "post",
-        data: {
-          show_address_id: show_address_id,
-          show_sto_id: show_sto_id,
-          show_payment_id: show_payment_id,
-        },
-        dataType: "json",
-        success: function (data) {
-          console.log(data);
-          $.each(data, function (key, val) {
-            var po_id = val["po_id"];
-            console.log(po_id);
-            if (val["status"] == "YES" && val["status_po"] == "1") {
-              InsertBank(po_id);
-              DeleteCart();
-            } else if (val["status"] == "YES" && val["status_po"] == "7") {
-              DeleteCart();
-              Swal.fire({
-                position: "center",
-                icon: "success",
-                title: "Your work has been saved",
-                showConfirmButton: false,
-                timer: 1500,
-              });
-              window.location.href = "myorder_all.php";
-            } else {
-              Swal.fire({
-                position: "center",
-                icon: "error",
-                title: "Your work has been Not saved",
-                showConfirmButton: false,
-                timer: 1500,
-              });
-            }
-          });
-        },
-      });
-    }else{
-      Swal.fire({
-        position: "center",
-        icon: "error",
-        title: "Please complete the information.",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    }
-  }
-
-  function InsertBank(po_id){
-    var tranfershow = $("#tranfershow").html();
-    var sto_id = $("#sto_id").html();
-    var bac_id = $("#bac_id").html();
-    var tranfer_date = $("#tranfer_date").val();
-    var amount = $("#amount").val();
-    var bac_name = $("#bac_name").val();
-    var bac_number = $("#bac_number").val();
-    var bac_account = $("#bac_account").val();
-    var logo_img64 = $("#logo_img64").val();
-    var imagebroswer =  $("#imagebroswer").val();
-    if (sto_id != "" && tranfershow != "" && bac_id != 0 && amount != "" && bac_name != "" && bac_number != "" && bac_account != ""  && logo_img64 != "" ) {
-      $.ajax({
-        url: "serve/Bank_Insert.php",
-        type: "post",
-        data: {
-          po_id: po_id,
-          bac_id: bac_id , 
-          tranfer_date: tranfer_date,
-          bac_name: bac_name,
-          bac_number: bac_number,
-          bac_account: bac_account,
-          logo_img64: logo_img64,
-          amount:amount ,
-          imagebroswer:imagebroswer ,
-        },
-        dataType: "json",
-        success: function (data) {
-          console.log(data);
-          $.each(data, function (key, val) {
-            if (val["status"] == "YES") {
-              Swal.fire("SAVE!", "OK.", "success");
-              window.location.href = "myorder_all.php";
-            } else {
-              Swal.fire({
-                position: "center",
-                icon: "error",
-                title: "ERROR",
-                showConfirmButton: false,
-                timer: 1500,
-              });
-              location.reload();
-            }
-          });
-        },
-      });
-    } else {
-      Swal.fire({
-        position: "center",
-        icon: "error",
-        title: "Please Check Input",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    }
-  }
-  
-  // คอนเฟริมออเดอร์ของเดลิเวอรี่
-  function PO_Insert_Delivery(show_address_id, show_sto_id){
-    var show_payment_id = $("#show_payment_id").html();
-    $.ajax({
+    console.log("ส่งแบบ Delivery" + show_address_id ,  show_sto_id , show_payment_id);
+     $.ajax({
       url: "serve/PO_Insert_Tranfer.php",
       type: "post",
       data: {
@@ -445,44 +445,14 @@ $(document).ready(function () {
         show_sto_id: show_sto_id,
         show_payment_id: show_payment_id,
       },
-      dataType: "json",
+      // dataType: "json",
       success: function (data) {
         console.log(data);
         $.each(data, function (key, val) {
-          var po_id = val["po_id"];
-          console.log(po_id);
-          if (val["status"] == "YES" && val["status_po"] == "1") {
-            DeleteCart();
-            Swal.fire({
-              position: "center",
-              icon: "success",
-              title: "Your work has been saved",
-              showConfirmButton: false,
-              timer: 1500,
-            });
-            window.location.href = "bank.php?po_id=" + po_id;
-          } else if (val["status"] == "YES" && val["status_po"] == "7") {
-            DeleteCart();
-            Swal.fire({
-              position: "center",
-              icon: "success",
-              title: "Your work has been saved",
-              showConfirmButton: false,
-              timer: 1500,
-            });
-            window.location.href = "myorder_all.php";
-          } else {
-            Swal.fire({
-              position: "center",
-              icon: "error",
-              title: "Your work has been Not saved",
-              showConfirmButton: false,
-              timer: 1500,
-            });
-          }
-        });
-      },
-    });
+
+        })
+      }
+    })
   }
 
   function DeleteCart(){

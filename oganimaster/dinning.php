@@ -72,7 +72,7 @@
         <div class="section22 " id="boxzone">
 
 
-            <div class="ml-1 zoneidall HoverBorder1" id="showall">
+            <div class="mx-5 ml-1 zoneidall HoverBorder1" id="showall">
 
                 <img src="img/table1.png" width="80">
 
@@ -119,7 +119,7 @@
                 <div class="col-lg-12 col-md-12">
                     <div class="latest-product__text">
                         <h4>
-                            <div class="show_name_table"></div>
+                            <!-- <div class="show_name_table"></div> -->
                         </h4>
                     </div>
 

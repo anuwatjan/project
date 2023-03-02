@@ -9,108 +9,81 @@ $result = mysqli_fetch_array($query);
 ?>
 
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Ogani Template">
-    <meta name="keywords" content="Ogani, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link rel="shortcut icon" href="../icons/icon-128x128.png" type="image/png">
-
-    <title>AKK Softtech</title>
-
-    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="../css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="../css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="../css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Shop Homepage - Start Bootstrap Template</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/scripts.js"></script>
+    <link rel="stylesheet" href="../style_index.css" type="text/css">
+    <link rel="stylesheet" href="../css/styllist.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="../css/radiostyle.css" type="text/css">
     <link rel="stylesheet" href="../css/radiostyle1.css" type="text/css">
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
-
-
-<style>
-@font-face {
-    font-family: myFirstFont;
-    src: url('../font/yikes_medium-webfont.ttf'), url('../font/yikes_medium-webfont.eot')
-}
-
-
-body,
-strong,
-h5,
-h4,
-p,
-ul,
-li,
-span {
-    font-family: myFirstFont;
-    font-weight: bold;
-    font-size:24px;
-}
-
-
-
-</style>
 
 
 <body>
 
 
-<style>
+    <?php include 'nav_profile.php' ; ?>
+    <style>
+    @font-face {
+        font-family: myFirstFont;
+        src: url('../font/yikes_medium-webfont.ttf'), url('../font/yikes_medium-webfont.eot')
+    }
 
 
-::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width: 0px;
-}
-.iBannerFix{
-    height:50px;
-    position:fixed;
-    bottom:0px;
-    width:100%;
-    color:white;
-    left:0px;
-    z-index: 99;
-}
-</style>
+    body,
+    strong,
+    h5,
+    h4,
+    p,
+    ul,
+    li,
+    span {
+        font-family: myFirstFont;
+        font-weight: bold;
+        font-size: 24px;
+    }
+    </style>
 
-<header class="header">
-    <div class="container">
-        <div class="row">
-            <div class="col-1 headermenucol9">
-                <div class="header__logo">
-                    <a href="./index.php"><img src="../../backend/assets/img/icons/AKK/logoAKK2.png" alt=""
-                            width="100px;"></a>
-                </div>
-            </div>
+    <style>
+    form {
+        width: 100%;
+        max-width: 100%;
 
-            <div class="col-md-11 col-sm-12">
-                <nav class="header__menu">
-                    <ul>
+    }
+    </style>
 
-                        <li id="myindex"> <i class="fa fa-arrow-left" aria-hidden="true"></i><a id="myindex">BACK</a></li>
-                       
-                        <li ><p  class="text-white" style="font-size:24px;">EMAIL</p></li>
-                    
-                        <!-- <li style="float:right"><i  class="fa fa-check" aria-hidden="true"></i></li> -->
-                    </ul>
-              
-                </nav>
-            </div>
+    <style>
+    ::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 0px;
+    }
 
-        </div>
-    </div>
+    .iBannerFix {
+        height: 50px;
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+        color: white;
+        left: 0px;
+        z-index: 99;
+    }
+    </style>
 
-</header>
+
+        <div class="container">
 
 
 <div class="col-lg-12 col-md-12 mt-5">
@@ -187,22 +160,11 @@ span {
 
 </div>
 
+</div>
 
 
 
 
- 
-    <script src="../js/jquery-3.3.1.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/jquery.nice-select.min.js"></script>
-    <script src="../js/jquery-ui.min.js"></script>
-    <script src="../js/jquery.slicknav.js"></script>
-    <script src="../js/mixitup.min.js"></script>
-    <script src="../js/owl.carousel.min.js"></script>
-    <script src="../js/main.js"></script>
-    <script src="profile.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
 
 </body>
 

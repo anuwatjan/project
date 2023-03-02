@@ -1,24 +1,5 @@
 <style>
-.modal-dialog3 {
-    position: fixed;
-    /* bottom: 0; */
-    /* top: 0; */
-    /* left: 0; */
-    /* right: 0; */
-    margin: 0;
-    padding: 0;
-    /* display: inline-block; */
-    max-width: 100%;
-    /* height: 100%; */
-    width: 100% overflow: scroll;
 
-    position: fixed;
-    top: auto;
-    right: 0;
-    left: 0;
-    bottom: 0;
-
-}
 
 .iBannerFix {
     height: 50px;
@@ -47,7 +28,7 @@
 
 <div class="modal fade " id="Cart_Detail_Mobile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
-    <div class="modal-dialog modal-dialog3" role="document">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -58,12 +39,12 @@
             <div class="ex1 modal-body">
 
             
-              <div class="text-center">
+              <!-- <div class="text-center">
                     Delivery<label class="mx-2 switch">
                         <input type="checkbox" checked>
                         <span class="slider round"></span>
                     </label>Tranfer
-                </div>
+                </div> -->
 
 
                 <!-- <div class="show_num_cart"></div> -->
@@ -73,7 +54,7 @@
                 <div class="scollbar">
 
                  
-                    <div id="show_add_product"></div>
+                    <div id="show_add_product2"></div>
 
 
                 </div>
