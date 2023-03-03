@@ -20,13 +20,12 @@
 
 
     <style type="text/css">
-
-.footer {
-   display: block;
-   text-align: center;
-   bottom: 0;
-}
-</style>
+    .footer {
+        display: block;
+        text-align: center;
+        bottom: 0;
+    }
+    </style>
 
     <!-- ผู้ใช้งาน -->
     <div id="show_cus_id" style="display:none;"><?php echo $_SESSION['akksofttechsess_cusid'] ;  ?></div>
@@ -167,7 +166,7 @@
                                 // echo print_r($res_p['prod_id']) ; 
                                 ?>
 
-                      
+
                         <div class="col-md-4 col-lg-3 col-sm-6 mb-5" id="Product_Click"
                             data-id="<?php echo $res_p['prod_id'] ; ?>">
                             <div class="card h-100">
@@ -205,7 +204,8 @@
 
 
 
-                    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="bi bi-arrow-up-short " style="font-size:22px"></i></button>
+                    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="bi bi-arrow-up-short "
+                            style="font-size:22px"></i></button>
 
 
 
@@ -282,12 +282,14 @@
 
         <!-- Footer-->
         <footer class="footer py-5" style="background:#663399">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
+            <div class="container">
+                <p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p>
+            </div>
         </footer>
 
-        
 
-        
+
+
 
     </div>
 
@@ -296,7 +298,7 @@
 
 
 
-    
+
 
     <!-- ส่วนโมบาย ตะกร้า -->
 
@@ -309,7 +311,7 @@
             <a style="float:center"><i class="bi bi-cart-check-fill"></i>CART</a>
             <div style="float:right">
                 <i class="bi bi-currency-dollar"></i>
-                <a  class="Cart_Total_Price_Mobile_session text-white"></a>
+                <a class="Cart_Total_Price_Mobile_session text-white"></a>
             </div>
         </button>
     </div>
@@ -375,7 +377,7 @@
     </div>
 
 
-    
+
 
     <!-- modal ส่วนของรีวิว -->
 

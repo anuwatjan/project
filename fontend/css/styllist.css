@@ -231,6 +231,7 @@
 
     @media only screen and (max-width: 480px) {
 
+        
 
 
         .modal-dialog {
@@ -314,6 +315,8 @@
     }
 
     @media only screen and (max-width: 890px) {
+
+        
 
         .modal-dialog {
             width: 100%;
