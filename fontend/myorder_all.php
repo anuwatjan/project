@@ -54,28 +54,6 @@ if(isset($_POST["txtKeyword"]))
         <div class="container">
 
 
-            <!-- <div class="mt-3 row">
-                        <label class="col-2 col-sm-1 col-form-label d-none d-sm-block">Serach</label>
-                        <div class="col-12 col-sm-5 mb-2">
-                            <input type="datetime-local" name="itemstartdate" id="itemstartdate" class="form-control"
-                                placeholder="Search Order" autocomplete="off">
-                        </div>
-                         <div class="col-12 col-sm-5 mb-2">
-                            <input type="datetime-local" name="itemenddate" id="itemenddate" class="form-control"
-                                placeholder="Search Order" autocomplete="off">
-                        </div>
-                    
-                        <div class="col-2 col-sm-1">
-                            <button type="button" class="btn primary-btn2" style="border:none;" id="btnSearchOrder">
-                                <span class="glyphicon glyphicon-search"></span>
-                                Search
-                            </button>
-                        </div>
-                        <div class="mx-3 col-2 col-sm-1">
-                            <a id="btnreset" class="text-white btn btn-warning">Reset</a>
-                        </div>
-                    </div> -->
-
             <?php               
         $totoprice = 0 ;
          $sss = "SELECT * FROM akksofttech_purchase_order  
@@ -328,17 +306,6 @@ if(isset($_POST["txtKeyword"]))
     </section>
 
 
-
-    <?php require 'script.php' ?>
-
-    <script src="serve/function.js"></script>
-
-    <script src="serve/index.js"></script>
-
-    <script src="serve/bank.js"></script>
-
-
-    <script src="serve/menu.js"></script>
 
 
 </body>

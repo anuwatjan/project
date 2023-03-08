@@ -218,7 +218,7 @@
                                                                 oninput="this.setCustomValidity('')"
                                                                 id="bac_account"></input>
                                                         </div>
-                                                        <div class="mt-2 col-lg-6 col-md-6">
+                                                        <div class=" col-lg-6 col-md-6">
                                                             Bank Number Account
                                                             <input required type="text" autocomplete="off" required
                                                                 name="bac_number" class="form-control"
@@ -231,9 +231,8 @@
                                                     <div id="bac_id" style="display:none;">0</div>
                                                     <div class=" mt-2 row">
                                                         Select Destination Bank
-                                                        <div class="row mb-5">
-                                                            <?php  $sql = "SELECT * FROM akksofttech_bank_account INNER JOIN akksofttech_bank ON akksofttech_bank.bak_id = akksofttech_bank_account.bak_id
-                                                        WHERE akksofttech_bank_account.sto_id = '".$reuslt11['sto_id']."' " ;
+                                                        <div class="row mb-2">
+                                                            <?php  $sql = "SELECT * FROM akksofttech_bank_account INNER JOIN akksofttech_bank ON akksofttech_bank.bak_id = akksofttech_bank_account.bak_id " ;
                                                         $query = mysqli_query($conn , $sql) ; 
                                                         while($result = mysqli_fetch_array($query)){ ?>
                                                             <div class="col-md-6 col-sm-6">

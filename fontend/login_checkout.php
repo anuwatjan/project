@@ -110,13 +110,16 @@ body {
 
                     <form class="mt-1" action="#">
 
+                        <input type="text" id="cus_username" class="mt-3 form-control" placeholder="Username">
 
-                        <input type="text" id="cus_username" class="form-control" placeholder="Username">
-
-                        <input class="form-control cus_password"  id="cus_password" type="password" placeholder="Password">
+                        <input class="mt-3 form-control cus_password"  id="cus_password" type="password" placeholder="Password">
 
 
-                        <button type="submit" id="ok_login_checkout" class="button button5">LOG IN </button>
+                        <!-- <button type="submit" id="ok_login" class="mt-3 button button5">LOG IN </button> -->
+
+
+
+                        <button type="submit" id="ok_login_checkout" class="mt-3 button button5">LOG IN </button>
 
 
                         <button class="mt-3 mb-3 button button6">REGISTER</button>

@@ -52,46 +52,57 @@
 
     <!-- Header-->
 
-    <div class="row">
-        <div class="col-md-9">
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-9">
 
 
-            <header class="bg-dark py-5">
-                <div class="container px-4 px-lg-5 my-5">
-                    <div class="text-center text-white">
-                        <h1 class="display-4 fw-bolder">Shop in style</h1>
-                        <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+                <header class="bg-dark py-5">
+                    <div class="container px-4 px-lg-5 my-5">
+                        <div class="text-center text-white">
+                            <h1 class="display-4 fw-bolder">Shop in style</h1>
+                            <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+                        </div>
                     </div>
-                </div>
-            </header>
+                </header>
 
 
-            <div class="container-xxl">
+                <div class="container-xxl">
 
-                <div class="container">
+                    <div class="container">
 
-                    <?php $sql_s ="select * from akksofttech_member_store LIMIT 1 " ; $que_s = mysqli_query($conn , $sql_s) ; $res_s = mysqli_fetch_array($que_s) ; ?>
+                        <?php $sql_s ="select * from akksofttech_member_store LIMIT 1 " ; $que_s = mysqli_query($conn , $sql_s) ; $res_s = mysqli_fetch_array($que_s) ; ?>
 
-                    <div class="row" id="review_info" data-id="<?php echo $res_s['sto_id'] ; ?>">
-
-
-                        <div class="col-md-9">
+                        <div class="row" id="review_info" data-id="<?php echo $res_s['sto_id'] ; ?>">
 
 
+                            <div class="col-md-9">
 
-                            <h1 class="mb-5 mt-4"><?php echo $res_s['sto_name'] ; ?><a id="reviewcssicon"
-                                    style="float:right"><i class="bi bi-exclamation-circle"
-                                        style="color:#663399;"></i></a> </h1>
+
+
+                                <h1 class="mb-5 mt-4"><?php echo $res_s['sto_name'] ; ?><a id="reviewcssicon"
+                                        style="float:right"><i class="bi bi-exclamation-circle"
+                                            style="color:#663399;"></i></a> </h1>
+
+
+                            </div>
+
+                            <div class="col-md-3" id="reviewcss">
+
+                                <h3 class="mb-5 mt-4" style="color:#663399">More Info</h3>
+
+
+                            </div>
 
 
                         </div>
 
-                        <div class="col-md-3" id="reviewcss">
-
-                            <h3 class="mb-5 mt-4" style="color:#663399">More Info</h3>
 
 
-                        </div>
+
+
 
 
                     </div>
@@ -100,57 +111,51 @@
 
 
 
-
-
                 </div>
 
 
 
 
 
-            </div>
+                <!-- รายการ -->
 
 
 
 
 
-            <!-- รายการ -->
-
-
-
-
-
-            <div class="mb-5 fixed section22 box  text-white" id="Box_Category">
-                <?php $sql ="select * from akksofttech_category " ; $que = mysqli_query($conn , $sql) ; while($res = mysqli_fetch_array($que)){ ; ?>
-                <div class="affecttext ml-1 Category_id  category<?PHP echo $res['cat_id']; ?>"
-                    data-id="<?PHP echo $res['cat_id']; ?>" id="<?PHP echo $res['cat_name']; ?>">
-                    <ul class="horizontal-list">
-                        <li>
-                            <?PHP echo $res['cat_name']; ?>
-                        </li>
-                    </ul>
-                </div>
-
-
-
-                <?php } ?>
-            </div>
-
-
-            <div class="container-xxl">
-
-                <div class="container">
-
-
+                <div class="mb-5 fixed section22 box  text-white" id="Box_Category">
                     <?php $sql ="select * from akksofttech_category " ; $que = mysqli_query($conn , $sql) ; while($res = mysqli_fetch_array($que)){ ; ?>
+                    <div class="affecttext ml-1 Category_id  category<?PHP echo $res['cat_id']; ?>"
+                        data-id="<?PHP echo $res['cat_id']; ?>" id="<?PHP echo $res['cat_name']; ?>">
+                        <ul class="horizontal-list">
+                            <li>
+                                <?PHP echo $res['cat_name']; ?>
+                            </li>
+                        </ul>
+                    </div>
 
 
-                    <h2 class="mb-3" id="category<?php echo $res['cat_id']; ?>"><?php echo $res['cat_name'] ; ?></h2>
+
+                    <?php } ?>
+                </div>
 
 
-                    <div class="row" id="box_product">
+                <div class="container-xxl">
 
-                        <?php $sql_p ="select * from akksofttech_product WHERE cat_id = '".$res['cat_id']."'" ; 
+                    <div class="container">
+
+
+
+                        <div class="row" id="box_product">
+
+
+                            <?php $sql ="select * from akksofttech_category " ; $que = mysqli_query($conn , $sql) ; while($res = mysqli_fetch_array($que)){ ; ?>
+
+
+                            <h2 class="mb-3" id="category<?php echo $res['cat_id']; ?>"><?php echo $res['cat_name'] ; ?>
+                            </h2>
+
+                            <?php $sql_p ="select * from akksofttech_product WHERE cat_id = '".$res['cat_id']."'" ; 
                               $que_p = mysqli_query($conn , $sql_p) ; 
                               while($res_p = mysqli_fetch_array($que_p)){ 
 
@@ -160,77 +165,75 @@
                                     $query4 = mysqli_query($conn ,$sql4);
                                     $num4 = mysqli_num_rows($query4);
                                     $data4 = mysqli_fetch_array($query4,MYSQLI_BOTH);
-
-
-
-                                // echo print_r($res_p['prod_id']) ; 
+                                    
                                 ?>
 
 
-                        <div class="col-md-4 col-lg-3 col-sm-6 mb-5" id="Product_Click"
-                            data-id="<?php echo $res_p['prod_id'] ; ?>">
-                            <div class="card h-100">
-                                <img width="110px" height="160px" class="card-img-top zoom"
-                                    src="..\backend\getimg\prod\<?php echo $res_p['prod_image'] ; ?>" alt="..." />
-                                <div class="card-body p-4">
-                                    <div class="text-center">
-                                        <h5 class="fw-bolder"><?php echo $res_p['prod_name'] ; ?></h5>
-                                    </div>
-                                    <p style="font-size:12px" class="fw-bolder"><?php echo $res_p['prod_detail'] ; ?>
-                                    </p>
+                            <div class="col-md-4 col-lg-3 col-sm-6 mb-5" id="Product_Click"
+                                data-id="<?php echo $res_p['prod_id'] ; ?>">
+                                <div class="card h-100">
+                                    <img width="110px" height="160px" class="card-img-top zoom"
+                                        src="..\backend\getimg\prod\<?php echo $res_p['prod_image'] ; ?>" alt="..." />
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <h5 class="fw-bolder"><?php echo $res_p['prod_name'] ; ?></h5>
+                                        </div>
+                                        <p style="font-size:12px" class="fw-bolder">
+                                            <?php echo $res_p['prod_detail'] ; ?>
+                                        </p>
 
-                                    <br>
+                                        <br>
 
-                                    <div class=" bg-transparent border-success"
-                                        style=" height:30px; font-size:20px;  position:absolute; bottom:0;">
+                                        <div class=" bg-transparent border-success"
+                                            style=" height:30px; font-size:20px;  position:absolute; bottom:0;">
 
-                                        <?php if($num4 > 0 ){ 
+                                            <?php if($num4 > 0 ){ 
                                          echo  "START PRICE : " . $data4['sprod_price'] ; 
                                       }else{ 
                                          echo "PRICE : " . $res_p['prod_price'] ; 
                                       } ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <?php } ?>
+
+
+                            <?php } ?>
+
                         </div>
 
 
 
-                        <?php } ?>
+
+                        <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="bi bi-arrow-up-short "
+                                style="font-size:22px"></i></button>
+
+
+
 
                     </div>
-
-                    <?php } ?>
-
-
-
-                    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="bi bi-arrow-up-short "
-                            style="font-size:22px"></i></button>
-
-
-
-
                 </div>
+
+
+
+
             </div>
 
 
 
 
-        </div>
+            <!-- 9ะกร้า -->
 
 
+            <div class="my-button col-md-3 mt-5">
 
+                <div class="fixedcart">
 
-        <!-- 9ะกร้า -->
+                    <!-- เลือกการจัดส่ง -->
 
-
-        <div class="my-button col-md-3 mt-5">
-
-            <div class="fixedcart">
-
-                <!-- เลือกการจัดส่ง -->
-
-                <!-- <div class="text-center">
+                    <!-- <div class="text-center">
                     Delivery<label class="mx-2 switch">
                         <input type="checkbox" checked>
                         <span class="slider round"></span>
@@ -238,31 +241,34 @@
                 </div> -->
 
 
-                <!-- <div class="show_num_cart"></div> -->
+                    <!-- <div class="show_num_cart"></div> -->
 
-                <P class="mt-2 mb-2 text-center">Your order from <?php echo $res_s['sto_name'] ; ?></P>
+                    <P class="mt-2 mb-2 text-center">Your order from <?php echo $res_s['sto_name'] ; ?></P>
 
-                <div class="scollbar">
+                    <div class="scollbar">
 
-                    <div class="show_add_product"></div>
+                        <div class="show_add_product"></div>
 
-                </div>
-
-
-                <hr>
-
-                <h3 class="text-center justify-content-center "><strong>Total Price</strong></h3>
-                <h1 class="text-center mb-3 toto_add_product double_line">สินค้าบริษัท </h1>
+                    </div>
 
 
-                <div class="container">
+                    <hr>
+
+                    <h3 class="text-center justify-content-center "><strong>Total Price</strong></h3>
+                    <h1 class="text-center mb-3 toto_add_product double_line">สินค้าบริษัท </h1>
 
 
-                    <div class="d-grid">
+                    <div class="container">
 
-                        <button id="checkout" class="btn primary-btn" type="button">GO TO CHECKOUT</button>
 
-                        <a href="destroyer.php" class="btn primary-btndet" type="button">DESTROYER</a>
+                        <div class="d-grid">
+
+                            <button id="checkout" class="btn primary-btn" type="button">GO TO CHECKOUT</button>
+
+                            <a href="destroyer.php" class="btn primary-btndet" type="button">DESTROYER</a>
+
+
+                        </div>
 
 
                     </div>
@@ -270,30 +276,34 @@
 
                 </div>
 
-
             </div>
+
+
+
+            <hr class="mt-3">
+
+
+            <!-- Footer-->
+            <footer class="footer py-5" style="background:#663399">
+                <div class="container">
+                    <p class="m-0 text-center text-white">ADDRESS
+
+QUICK LINK
+
+GALLERY
+
+NEWSLETTER
+</p>
+                </div>
+            </footer>
+
+
+
+
 
         </div>
 
-
-
-        <hr class="mt-3">
-
-
-        <!-- Footer-->
-        <footer class="footer py-5" style="background:#663399">
-            <div class="container">
-                <p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p>
-            </div>
-        </footer>
-
-
-
-
-
     </div>
-
-
 
 
 
@@ -317,8 +327,6 @@
     </div>
 
 
-
-
     <!-- Modal ส่วนของการเพิ่มสินค้าลงตะกร้า -->
     <div class="modal fade" id="Product_Detail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -326,6 +334,8 @@
                 <div class="modal-header" style="padding:0rem 0rem; ">
                     <div class="col-md-12" style="padding-right:0px;     padding-left: 0px;">
                         <div id="Product_Show_Detail_Images"></div>
+                        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+
                     </div>
                 </div>
                 <div class="modal-body">
@@ -377,8 +387,6 @@
     </div>
 
 
-
-
     <!-- modal ส่วนของรีวิว -->
 
     <div class="modal fade" id="Review_Detail<?php echo $res_s['sto_id'] ; ?>" tabindex="-1"
@@ -416,12 +424,8 @@
 
 
 
-
     <script>
-    // Get the button
     let mybutton = document.getElementById("myBtn");
-
-    // When the user scrolls down 20px from the top of the document, show the button
     window.onscroll = function() {
         scrollFunction()
     };
@@ -434,7 +438,6 @@
         }
     }
 
-    // When the user clicks on the button, scroll to the top of the document
     function topFunction() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;

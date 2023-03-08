@@ -16,7 +16,7 @@
 
   <nav class="fixed2 navbar navbar-expand-lg navbar-light navbg">
       <div class="container px-4 px-lg-5">
-          <a id="myindex" class="navbar-brand text-white">AKK SOFTTECH</a>
+          <a id="myindex2" class="navbar-brand text-white">AKK SOFTTECH</a>
           <button class="navbar-toggler btn btn-demo" type="button" id="menu_mobile" class="" data-toggle="modal"
               data-target="#myModal">
               <i class="bi-list me-1 text-white"></i></button>
@@ -42,7 +42,7 @@
                                   <hr class="dropdown-divider" />
                               </li>
                               <li><a class="dropdown-item" id="myaccount">Profile</a></li>
-                              <li><a class="dropdown-item" id="mylogout">Checkout</a></li>
+                              <li><a class="dropdown-item" id="mylogout">LOG OUT</a></li>
                           </ul>
                       </li>
                   </ul>
@@ -135,18 +135,18 @@ p:hover {
                       <?php if($_SESSION['akksofttechsess_cususername'] != ""){ ?>
 
 
-                      <p id="myindex">CART</p>
+                      <p id="myindex2">CART</p>
 
 
 
-                      <p id="myorder">ORDER</p>
+                      <p id="myorder2">ORDER</p>
 
 
-                      <p id="mytable">RESERVE</p>
+                      <p id="mytable2">RESERVE</p>
 
 
 
-                      <p id="myaccount">PROFILE</p>
+                      <p id="myaccount2">PROFILE</p>
 
 
                       <hr>
@@ -154,7 +154,7 @@ p:hover {
                       <p>HEKP CENTER</p>
 
 
-                      <p id="mylogout">LOGOUT</p>
+                      <p id="mylogout2">LOGOUT</p>
 
 
 
@@ -162,11 +162,11 @@ p:hover {
 
 
 
-                      <p id="myindex">CART</p>
+                      <p id="myindex3">CART</p>
 
 
 
-                      <p id="mylogin">LOGIN</p>
+                      <p id="mylogin2">LOGIN</p>
 
 
 

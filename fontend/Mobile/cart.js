@@ -7,6 +7,10 @@ $(document).ready(function () {
     e.preventDefault();
   });
 
+  // ปิด
+  $(".modalcartclose").click(function(){
+    $("#Cart_Detail_Mobile").modal("hide");
+  });
   // กดปุ่มเพิ่มจำนวนสินค้าในตะกร้า
   $(".Box_Cart_Number_Product_Mobile").on(
     "click",
@@ -423,21 +427,80 @@ $(document).ready(function () {
   });
 
   // กดปุ่ม checkout
-  $("#checkout1").click(function () {
-    var cartnumber = $("#Cart_Total_Num_Mobile").html();
-    console.log(cartnumber);
-    if (cartnumber < 1) {
-      Swal.fire({
-        position: "center",
-        icon: "error",
-        title: "Please Shoopping",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    } else {
-      window.location.href = "CheckOut.php";
-    }
-  });
+  // $("#checkout1").click(function () {
+  //  var number_cart = $(".show_add_product").html();
+  //   if (number_cart == "") {
+  //     Swal.fire({
+  //       position: "center",
+  //       icon: "warning",
+  //       title: "There are no products in the cart.",
+  //       showConfirmButton: false,
+  //       timer: 1500,
+  //     });
+  //   } else {
+  //     window.location.href = "CheckOut.php";
+  //   }
+  // });
+
+   $("#checkout1").click(function () {
+     // เช็คล็อคอินยัง
+     // รับค่าจำนวนตะกร้า
+     var number_cart = $(".show_add_product").html();
+     if (number_cart == "") {
+       Swal.fire({
+         position: "center",
+         icon: "warning",
+         title: "There are no products in the cart.",
+         showConfirmButton: false,
+         timer: 1500,
+       });
+     } else {
+       $.ajax({
+         url: "serve/checklogin.php",
+         type: "post",
+         data: {},
+         dataType: "json",
+         success: function (data) {
+           $.each(data, function (key, val) {
+             if (val["status"] == "NO") {
+               let timerInterval;
+               Swal.fire({
+                 title: "Please wait few minute",
+                 html: "not logged in going to internal login page <b></b> milliseconds.",
+                 timer: 2000,
+                 timerProgressBar: true,
+                 didOpen: () => {
+                   Swal.showLoading();
+                   const b = Swal.getHtmlContainer().querySelector("b");
+                   timerInterval = setInterval(() => {
+                     b.textContent = (Swal.getTimerLeft() / 1000).toFixed(2);
+                   }, 100);
+                 },
+                 willClose: () => {
+                   clearInterval(timerInterval);
+                 },
+               }).then((result) => {
+                 if (result.dismiss === Swal.DismissReason.timer) {
+                   window.location.href = "login_checkout.php";
+                 }
+               });
+               // ไม้มีตะกร้า
+             } else if (val["status" == "NOT"]) {
+               Swal.fire({
+                 position: "center",
+                 icon: "warning",
+                 title: "Your work has been saved",
+                 showConfirmButton: false,
+                 timer: 1500,
+               });
+             } else {
+               window.location.href = "CheckOut.php";
+             }
+           });
+         },
+       });
+     }
+   });
 
   // อัพเดตตารางแบบไม่รีเฟรช
   function Refresh_Value_Table() {

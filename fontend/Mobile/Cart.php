@@ -1,6 +1,4 @@
 <style>
-
-
 .iBannerFix {
     height: 50px;
     position: fixed;
@@ -30,16 +28,19 @@
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+
+
+            <div class="m-3 col-md-3">
+                <button type="button" class="btn primary-btndet modalcartclose" style="border-radius:50%;">
+                    <span aria-hidden="true">&times;</span></button>
             </div>
+
+
 
             <div class="ex1 modal-body">
 
-            
-              <!-- <div class="text-center">
+
+                <!-- <div class="text-center">
                     Delivery<label class="mx-2 switch">
                         <input type="checkbox" checked>
                         <span class="slider round"></span>
@@ -53,7 +54,7 @@
 
                 <div class="scollbar">
 
-                 
+
                     <div id="show_add_product2"></div>
 
 
@@ -70,11 +71,10 @@
 
 
                     <div class="d-grid">
-
-                        <button type="button" id="checkout1" class="btn btn-1"> GO TO CHECKOUT </button>
-
-                        <a href="destroyer.php" class="btn btn-danger" type="button">DESTROYER</a>
-
+                     <div class="iBannerFix">
+                        <button type="button" style="border:none;width:100%;height:50px;" id="checkout1"
+                            class="btn btn-1">GO TO CHECKOUT</button>
+                    </div>
 
                     </div>
 
@@ -85,12 +85,10 @@
 
         </div>
 
-      
-      
+
+
 
 
     </div>
 
 </div>
-
-

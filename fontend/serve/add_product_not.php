@@ -8,6 +8,7 @@
         
         $product_id = $_POST['product_id']; //รับค่าเดี่ยวไปก่อน
         $show_sub_prod_id = $_POST['show_sub_prod_id']; //รหัสสินค้าย่อย
+        $show_quantity_de = $_POST['show_quantity_de'];  //จำนวน
         $mainArray = array();
         $_SESSION['store'][$product_id] = array(1);
 
@@ -41,8 +42,9 @@
                                                                                 "product_price" => $qecc_sub2['sprod_price'] ,
                                                                                 "sproduct_id" => $show_sub_prod_id ,
                                                                                 "sprod_name" => $qecc_sub2['sprod_name'] ,
+                                                                                "product_quantity" =>  $show_quantity_de ,
                                                                             );
-                                                            array_push($spromainArray , $sproarrayBill);
+                                                            array_push($mainArray , $sproarrayBill);
                                                         }
                                                     }
                                                     
@@ -71,18 +73,18 @@
                                                     "sprod_name" => "-" ,
                                                     "product_quantity" =>  $_SESSION['store'][$rowr['prod_id']]['0'] ,
                                                      );
-                                                        array_push($promainArray, $proarrayBill);                                                      
+                                                        array_push($mainArray, $proarrayBill);                                                      
                                                     }		
                                             
                                       
                                             }       
                                             
-                                                    $arrayBill = array();
-                                                                $arrayBill = array(
-                                                                "product" =>  $promainArray , 
-                                                                "sproduct" => $spromainArray
-                                                                );
-                                                        array_push($mainArray, $arrayBill);         
+                                                    // $arrayBill = array();
+                                                    //             $arrayBill = array(
+                                                    //             "product" =>  $promainArray , 
+                                                    //             "sproduct" => $spromainArray
+                                                    //             );
+                                                    //     array_push($mainArray, $arrayBill);         
 echo json_encode($mainArray);
         
 ?>

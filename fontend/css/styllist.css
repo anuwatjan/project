@@ -231,8 +231,16 @@
 
     @media only screen and (max-width: 480px) {
 
-        
 
+        .box {
+                top: 56px;
+                background-color: #663399;
+                /* width: 100%; */
+                /* border: 1px solid white; */
+                height: 0.15%;
+        
+            }
+    
 
         .modal-dialog {
             width: 100%;
@@ -317,6 +325,14 @@
     @media only screen and (max-width: 890px) {
 
         
+.box {
+        top: 56px;
+        background-color: #663399;
+        /* width: 100%; */
+        /* border: 1px solid white; */
+        height: 0.15%;
+
+    }
 
         .modal-dialog {
             width: 100%;
@@ -370,6 +386,7 @@
             margin: auto;
             width: 100%;
         }
+
 
         .col-md-9 {
             width: 100%;
