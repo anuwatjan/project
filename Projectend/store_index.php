@@ -3,15 +3,16 @@
 
 </style>
 
-<h1>ตรวจสอบสต็อกสินค้า</h1>
+<h1>Isotope - filtering</h1>
 
 
 
+<div class="row">
+
+<div class="col-md-8">
 
 
-
-
-<div class=" button-group filters-button-group">
+<div class="section22 button-group filters-button-group">
     <button class="button is-checked" data-filter="*">ALL</button>
     <?php $sql = "SELECT * FROM category" ;
           $query = mysqli_query($conn , $sql ) ; 
@@ -20,23 +21,34 @@
     <?php  } ?>
 </div>
 
-
-
-
-
 <div class="grid">
         <?php $sql_p = "SELECT * FROM product" ;
           $query_p = mysqli_query($conn , $sql_p ) ; 
           while($result_p = mysqli_fetch_array($query_p , MYSQLI_BOTH)){ ?>
     <div class="element-item transition <?php echo $result_p['p_cat_id'] ; ?> " data-category="transition">
         <h3 class="name"><?php echo $result_p['p_name'] ; ?></h3>
-        <!-- รูป -->
-        <img class="img-fluid" class="img-fluid" src="img/<?php echo $result_p['p_img'] ; ?>">
-        <!-- จำนวน -->
-        <p class="number">80</p> 
+        <h3 class="price text-center">ราคา:<?php echo $result_p['p_price'] ; ?> บาท</h3>
+        <p class="symbol"><?php echo strtoupper(substr($result_p['p_name'], 0, 1)) ; ?></p>
+        <p class="number">จำนวน:80</p>
     </div>
     <?php  } ?>
 </div>
+
+</div>
+
+
+
+<div class="col-md-2">
+
+
+
+
+</div>
+
+
+</div>
+
+
 
 
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
