@@ -12,7 +12,7 @@
 <div class="col-md-8">
 
 
-<div class="section22 button-group filters-button-group">
+<div class=" button-group filters-button-group">
     <button class="button is-checked" data-filter="*">ALL</button>
     <?php $sql = "SELECT * FROM category" ;
           $query = mysqli_query($conn , $sql ) ; 
@@ -38,9 +38,34 @@
 
 
 
-<div class="col-md-2">
+<div class="col-md-4">
 
 
+
+<input class="form-control">
+
+<table border="2" cellspacing="0" cellpadding="0"  width="26%" bgcolor="#000000" height="30%" class="text-center" style="position:fixed; bottom:0; color:white ; font-size:24px ;">
+    <tr>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+    </tr>
+      <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+     <tr>
+        <td>0</td>
+        <td>.</td>
+        <td></td>
+    </tr>
+</table>
 
 
 </div>

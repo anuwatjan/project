@@ -1,0 +1,13 @@
+<phpunit bootstrap="tests/bootstrap.php" verbose="true">
+  <testsuites>
+    <testsuite name="Helpers">
+      <file>tests/UtilsTest.php</file>
+      <file>tests/FilterHelperTest.php</file>
+      <file>tests/AggregateHelperTest.php</file>
+    </testsuite>
+    <testsuite name="DataSourceLoader">
+      <file>tests/DbSetAPITest.php</file>
+      <file>tests/DataSourceLoaderTest.php</file>
+    </testsuite>
+  </testsuites>
+</phpunit>
